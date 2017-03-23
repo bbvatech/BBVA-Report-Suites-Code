@@ -1,0 +1,55 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+127.0.0.1       localhost
+::1             localhost
+127.0.0.1       localhost.bbva
+127.0.0.1                   activation.cloud.techsmith.com
+127.0.0.1                   oscount.techsmith.com
+127.0.0.1                   65.52.240.48
+127.0.0.1                   69.167.144.18
+127.0.0.1                   updater.techsmith.com
+127.0.0.1                   camtasiatudi.techsmith.com
+127.0.0.1                   tsccloud.cloudapp.net
+127.0.0.1                   assets.cloud.techsmith.com
+
+#test mexico
+#150.250.250.12  desa www.contiweb.com.pe www.bbvabancocontinental.com.pe wasdesa2
+#150.250.251.37   PD_test    www.continet.com.pe
+
+#Calidad Mexico 
+#150.250.250.10  calidad www.contiweb.com.pe        www.bbvabancocontinental.com.pe       wascal1 wasdesa2
+
+
+#Test Perú
+150.250.251.37 www.continet.com.pe
+
+#Calidad Perú
+#150.250.251.38 www.continet.com.pe
+
+
+#Calidad Colombia
+#82.119.234.82 www.bbvanet.com.co
+#82.119.234.70 www.bbva.com.co
+
+#Desarrollo Colombia
+82.255.80.14 www.bbvanet.com.co
+
+#NuevaNetColombiaDev
+82.255.80.15 www.bbvanet.com.co

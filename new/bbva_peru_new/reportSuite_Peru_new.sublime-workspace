@@ -1,0 +1,973 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"inde",
+				"indexOf"
+			],
+			[
+				"ready",
+				"ready	$(document).ready"
+			],
+			[
+				"innerH",
+				"innerHTML"
+			],
+			[
+				"ap",
+				"append	.append()"
+			],
+			[
+				"p",
+				"p	Tag"
+			],
+			[
+				"div",
+				"div	Tag"
+			],
+			[
+				"varia",
+				"$variable3〔variable〕"
+			],
+			[
+				"va",
+				"$variable2〔variable〕"
+			],
+			[
+				"host",
+				"hostname	URLUtils"
+			],
+			[
+				"test",
+				"test(string)	RegExp"
+			],
+			[
+				"name",
+				"name	Attr"
+			],
+			[
+				"inputs",
+				"inputs	input - submit"
+			],
+			[
+				"a",
+				"a	<a>"
+			],
+			[
+				"for",
+				"for-k"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"in",
+				"inputr	input - radio"
+			],
+			[
+				"geta",
+				"getAttribute(attributeName)	Element"
+			],
+			[
+				"inner",
+				"innerHTML	Element"
+			],
+			[
+				"getele",
+				"getElementById(id)	Element"
+			],
+			[
+				"getda",
+				"getDay()	Date"
+			],
+			[
+				"getut",
+				"getUTCDay()	Date"
+			],
+			[
+				"getDat",
+				"getDay()	Date"
+			],
+			[
+				"settiem",
+				"setTimeout(func, delay)	Window"
+			],
+			[
+				"max",
+				"maxlength	Attr"
+			],
+			[
+				"inp",
+				"inputt	input - tel"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"blo",
+				"block"
+			],
+			[
+				"st",
+				"style	Attr"
+			],
+			[
+				"sub",
+				"substr(start)	String"
+			],
+			[
+				"su",
+				"substr(start)	String"
+			],
+			[
+				"date",
+				"new Date()	Date"
+			],
+			[
+				"re",
+				"ready	$(document).ready"
+			],
+			[
+				"scr",
+				"script	<script>"
+			],
+			[
+				"submit",
+				"submit	.submit()"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"settie",
+				"setTimeout(func, delay)	Window"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"inle",
+				"inline-block"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"table-r",
+				"table-row"
+			],
+			[
+				"ta",
+				"table-column-group"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"with",
+				"width"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"each",
+				"each	$.each()"
+			],
+			[
+				"remove",
+				"removeAttr	.removeAttr()"
+			],
+			[
+				"inlcu",
+				"include	@include"
+			],
+			[
+				"mixin",
+				"mixin	@mixin"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"si",
+				"siblings	.siblings()"
+			],
+			[
+				"ea",
+				"each	$.each()"
+			],
+			[
+				"le",
+				"length	String"
+			],
+			[
+				"slickSli",
+				"slickSliceIE8LiveWidth"
+			],
+			[
+				"wid",
+				"width	Style CSS"
+			],
+			[
+				"read",
+				"ready	$(document).ready"
+			],
+			[
+				"app",
+				"appendTo	.appendTo()"
+			],
+			[
+				"top",
+				"top	Style CSS"
+			],
+			[
+				"css",
+				"css	.css() - single"
+			],
+			[
+				"pre",
+				"prepend	.prepend()"
+			],
+			[
+				"type",
+				"typeof(Object)	Object"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"sli",
+				"slick-slide"
+			],
+			[
+				"alig",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"add",
+				"addEventListener(type, listener)	EventTarget"
+			],
+			[
+				"getel",
+				"getElementsByClassName(names)	Element"
+			],
+			[
+				"alert",
+				"alert(message)	Window"
+			],
+			[
+				"attr",
+				"attr	.attr() - single"
+			],
+			[
+				"docu",
+				"document	Document"
+			],
+			[
+				"ale",
+				"alert(message)	Window"
+			],
+			[
+				"res",
+				"resize	.resize()"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"sl",
+				"slick-prev"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"bgi",
+				"bgi	background-image"
+			],
+			[
+				"incl",
+				"include	@include"
+			],
+			[
+				"function",
+				"function with name"
+			],
+			[
+				"html",
+				"html5	Simple HTML5 Boilerplate"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 342.0,
+		"last_filter": "pret",
+		"selected_items":
+		[
+			[
+				"pret",
+				"HTMLPrettify"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"fora",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"prety",
+				"HTMLPrettify"
+			],
+			[
+				"jas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"linet",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"forma",
+				"CodeFormatter: Format as PHP Syntax"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"formate",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"beat",
+				"HTMLBeautify"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"code",
+				"CodeFormatter: Format as PHP Syntax"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"beaty",
+				"HTMLBeautify"
+			],
+			[
+				"php",
+				"phpfmt: format now"
+			],
+			[
+				"beauty",
+				"HTMLBeautify"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Color Picker"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"sor",
+				"Sort Lines"
+			],
+			[
+				"so",
+				"Sort Lines"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"get",
+				"Snippet: .get()"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"js line",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pretti",
+				"HTMLPrettify"
+			],
+			[
+				"sasss",
+				"Set Syntax: Sass"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 510.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/www/bbva_argentina_new/js/huella_mod.js",
+		"/C/www/bbva_argentina_new/js/configHuella.js",
+		"/C/Users/usuario/AppData/Local/Temp/Facebook_Pixel_Conversion_Todas_Cuentas.txt",
+		"/C/Users/usuario/AppData/Local/Temp/CNV_VD_Seguros_SV_Lead.txt",
+		"/C/www/bbva_mexico_new/reportSuite_Bancomer_new_code.txt",
+		"/C/www/bbva_mexico/reportSuite_Bancomer.txt",
+		"/C/www/bbva_mexico_new/reportSuite_Bancomer_new.txt",
+		"/C/www/bbva_mexico/google/Remarketing Pixel Nomina-1.txt",
+		"/C/www/bbva_mexico/google/condicion.js",
+		"/C/www/bbva_mexico/google/Conversion Pixel Nomina-1.txt",
+		"/C/www/bbva_mexico/reportSuiteBancomer.js",
+		"/C/www/bbva_mexico/reportSuiteArgentina.js",
+		"/C/www/bbva_mexico/js/slider_botones_slider.js",
+		"/C/www/bbva_mexico/aa.html",
+		"/C/www/bbva_mexico/js/botones_Container.js",
+		"/C/www/bbva_mexico/js/enlaces_banner_lateral.js",
+		"/C/www/bbva_mexico/js/enlaces_banner_carrusel.js",
+		"/C/www/bbva_mexico/js/pelotas_slider.js",
+		"/C/www/bbva_mexico/js/enlaces_banner_botones_slider.js",
+		"/C/www/bbva_colombia/funciones_condiciones.js",
+		"/C/www/bbva_colombia/js/funciones_condiciones.js",
+		"/C/www/bbva_DTM/js/funciones_dataLayer.js",
+		"/C/www/bbva_DTM/php/recogeDatosPOST.php",
+		"/C/www/bbva_DTM/php/envioDeDatosPost.html",
+		"/C/www/bbva_DTM/php/conn.php",
+		"/C/www/bbva_DTM/funciones_dataLayer.js",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/README.md",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/C/www/bbva_DTM/php/recogeDatosURL.php",
+		"/C/www/bbva_DTM/salidaDeDominio.html",
+		"/C/www/bbva_DTM/js/salidaDeDominio.js",
+		"/C/www/trackingCodesGenerator/util.js",
+		"/C/www/trackingCodesGenerator/js/pattern.js",
+		"/C/www/trackingCodesGenerator/js/validaciones.js",
+		"/C/www/bbva_DTM/js/validaciones.js",
+		"/C/www/bbva_DTM/js/util.js",
+		"/C/www/bbva_DTM/js/pattern.js",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/patterns/SeglCsPatterns.java",
+		"/C/www/bbva_DTM/app/jade/index.jade",
+		"/C/www/bbva_DTM/dist/contenido.html",
+		"/C/www/bbva_DTM/plantillaPruebas.html",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/compruebaTipoDocumento.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/validaciones/validarCif.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/validaciones/validacionNif.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/validaciones/validarDNI.txt",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/.jshintrc",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/JAVASCRIPT_VALIDACIONES.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/JsValidaciones.js",
+		"/C/www/bbva_DTM/js/jquery-1.12.0.js",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/CadenaConexionBBDD.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/patterns/patternsRegularExpresions.java",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/htmlbox.full.js",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/webtoolkit.js",
+		"/C/www/bbva_DTM/js/ejemplo_s_code_dataLayer.js",
+		"/C/www/bbva_DTM/js/telefono_mx.js",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/DefaultMetadataLoader.php",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/MetadataLoaderInterface.php",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/MultiFileMetadataSourceImpl.php",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/NumberParseException.php",
+		"/C/Users/usuario/Desktop/dataLayer/Implantación/dataLayer_english.txt",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JsFormat/Default (Windows).sublime-keymap",
+		"/C/Users/usuario/AppData/Local/Temp/dataLayer_english.txt",
+		"/C/www/bbva_DTM/js/fecha.js",
+		"/C/www/bbva_DTM/.jshintrc",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JsFormat/JsFormat.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/Default (Windows).sublime-keymap",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/programas/programas_Utiles.txt",
+		"/C/Users/usuario/AppData/Local/Temp/Rar$DIa0.743/Readme.txt",
+		"/C/Users/usuario/Downloads/Programas/Desarrollo/sublime/Iconos/Leeme_instalacion.txt",
+		"/C/www/bbva_DTM/js/fecha_02.js",
+		"/C/www/bbva_DTM/fecha_02.html",
+		"/C/www/bbva_DTM/comprobacionNavegador.html",
+		"/C/www/bbva_svn/.git/config",
+		"/C/www/bbva_svn/app/js/main-single-page.js",
+		"/C/www/bbva_DTM/Validador_telefono_mundial.html",
+		"/C/www/bbva_DTM/delayArchivoDescarga.html",
+		"/C/www/bbva_DTM/js/demo-compiled.js",
+		"/C/www/bbva_DTM/demo-compiled.html",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/i18n/phonenumbers/demo.html",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/i18n/phonenumbers/asyoutypeformatter_test.js",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/i18n/phonenumbers/asyoutypeformatter_test.html",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/build.xml",
+		"/C/www/bbva_DTM/pruebas.html",
+		"/C/www/bbva_DTM/libphonenumber-for-php-master/src/libphonenumber/carrier/data/Map.php",
+		"/C/www/bbva_DTM/libphonenumber-for-php-master/src/libphonenumber/AlternateFormatsCountryCodeSet.php",
+		"/C/www/bbva_DTM/seguro-vehicular.htm",
+		"/C/www/bbva_DTM/ControlEventoLanzamientoSubmitFormulario.html",
+		"/C/www/bbva_DTM/css/estilos.css",
+		"/C/Users/usuario/Documents/dtm/s_code/s_code.js",
+		"/C/www/bbva_svn/app/jade/lib/variables.jade",
+		"/C/www/bbva_svn/app/sass/distributivaAzul.scss",
+		"/C/www/bbva_svn/app/jade/distributivaAzul.jade",
+		"/C/www/bbva_svn/app/js/distributivaAzul.js",
+		"/C/www/bbva_svn/app/sass/subHome.scss",
+		"/C/www/bbva_svn/app/sass/lib/_variables.scss",
+		"/C/www/bbva_svn/dist/impactoSubHome.html",
+		"/C/www/bbva_svn/app/js/subHome.js",
+		"/C/www/bbva_svn/app/jade/impactoSubHome.jade",
+		"/C/www/bbva_svn/gulpfile.js",
+		"/C/www/bbva_svn/package.json",
+		"/C/www/bbva_svn/app/jade/impactoHome.jade",
+		"/C/www/bbva_svn/dist/impactoHome.html",
+		"/C/www/bbva_svn/app/sass/main-single-page.scss",
+		"/C/www/bbva_svn/app/sass/lib/_mixins.scss",
+		"/C/www/bbva_svn/app/sass/components/_fuente.scss",
+		"/C/www/bbva_svn/dist/css/main-single-page.css",
+		"/C/www/bbva_svn/app/js/impactoSubHome.js",
+		"/C/www/bbva_svn/dist/js/main-single-page.min.js",
+		"/C/www/bbva_svn/app/js/vendor/slick.min.js",
+		"/C/www/bbva_svn/app/css/old/ie8.min.css",
+		"/C/www/bbva_svn/app/jade/old/head.jade",
+		"/C/www/bbva_svn/app/jade/old/layout.jade",
+		"/C/www/bbva_svn/dist/css/ie8.min.css",
+		"/C/www/bbva_svn/app/jade/old/header.jade",
+		"/C/www/bbva_svn/app/jade/includes/scripts.jade",
+		"/C/www/bbva_svn/app/jade/old/scripts.jade",
+		"/C/www/bbva_svn/dist/js/old/libraries.min.ver2_chile.min.js",
+		"/C/www/bbva_svn/app/js/old/libraries.min.js",
+		"/C/www/bbva_svn/app/jade/includes/head.jade",
+		"/C/Users/usuario/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.IE5/C01323DW/jquery-migrate-1.2.1.min.js",
+		"/C/www/bbva_svn/app/js/vendor/jquery_es.min.js",
+		"/C/www/bbva_svn/app/js/vendor/slick_es.js",
+		"/C/www/bbva_svn/app/js/impactoHome.js"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<current file>",
+			"<open files>,<current file>",
+			"<open files>",
+			"C:\\www\\bbva_DTM\\libphonenumber-master\\javascript",
+			"C:\\www\\bbva_DTM\\libphonenumber-for-php-master",
+			"<current file>,C:\\www\\bbva_svn",
+			"<current file>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"numVisi",
+			"getVisitNum",
+			"visitor",
+			"getQueryParam",
+			"getNewRepeat",
+			"informacion",
+			"instances",
+			"getTrackingCode",
+			"this",
+			"enlP4",
+			"principal:widget:vida bancomer",
+			"widget:pago de impuestos",
+			"principal:widget:pago de impuestos",
+			"http://www.bancomer.com/bancainversiones/informe.html",
+			"channel",
+			"campoRelleno",
+			"ALFANUMERICO",
+			"PATTERN_A2",
+			"ALFANUMERICO",
+			"TELEFO",
+			"cif",
+			"mail",
+			"SEGL_",
+			"public static final String",
+			"\n            ",
+			"move",
+			"=",
+			"= ",
+			"C",
+			"D",
+			"4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6",
+			"d{8}|(?:2(?:0[01]|2[2-9]|3[1-35-8]",
+			"d{8}|(?:2(?:0[01]|2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])",
+			"(?:2(?:0[01]|2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]",
+			"(?:2(?:0[01]|2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))",
+			"7[1-378]|9[12479])",
+			"\\\\d{7}\", \"\\\\d{7,10}\", , , \"2221234567\"",
+			"?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]",
+			"(?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))",
+			"match",
+			"db",
+			"K",
+			"ES",
+			"MX",
+			"function PhoneNumber",
+			"PhoneNumber",
+			"MX",
+			"mx",
+			"phoneNumberParser",
+			"db",
+			"MX",
+			"valid",
+			"MX",
+			"34",
+			"mexico",
+			"ES",
+			"es",
+			"sp",
+			"Yoigo",
+			"Vodafone",
+			"Movistar",
+			"telefonica",
+			"34",
+			"btnEnviar",
+			"form",
+			"btnEnviar",
+			"oncli",
+			"form",
+			"btnEnviar",
+			"form",
+			"sub",
+			"padding",
+			"img",
+			"font",
+			"subH",
+			"sub",
+			"subhome",
+			"img",
+			"slickSliceIE8",
+			"padding",
+			"img",
+			"paddin",
+			"img",
+			"ajuste",
+			"3",
+			"include",
+			"setWidthPill",
+			"ajusteSlick",
+			"SetIframeHeight",
+			"slideHandler",
+			"click",
+			"setTextSizePill",
+			"slick-next slick-arrow",
+			"sizeTexto39",
+			"i()",
+			"           \n",
+			"ready",
+			"attib",
+			"dots",
+			"dos",
+			"i() && i() < 9",
+			"i()",
+			".slice",
+			"slice",
+			"i(",
+			"msie",
+			"ie",
+			"  \n",
+			"href",
+			"subHome",
+			"            \n",
+			"max",
+			"		div\n			//- Tamaño de la imagen de 1400x500 px\n			img(src=\"img/impacto-home-01.jpg\")\n			//- Tamaño de la imagen 100x00 px				\n			img#thumnail(src=\"img/thumnail/thum_impacto-home-01.jpg\")\n			.contenido-img-sub.fondoBlanco.textoAzul.izquierda\n				p.sizeTexto32 Ahorrar tiene premio\n				p.sizeTexto39 ¿Quiere saber como ganar tu bateria portatil y entrar en sorteos de 1000€?\n				.botones\n					a.boton.verde.sizeTexto16(href=\"#\") QUIERO SABER MÁS\n					a.boton.blanco.sizeTexto16(href=\"#\") MÁS INFORMACIÓN\n",
+			"			\n",
+			"propagation",
+			"hover",
+			"			\n",
+			"azul",
+			"main",
+			"img",
+			"izqui",
+			"main",
+			"thum",
+			".fondoAzul {\n  background-color: $blue;\n}\n",
+			"verde",
+			"hover",
+			"Previous",
+			"slick-label-next"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"var",
+			"var ",
+			":",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 26.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "reportSuite_Peru_new.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\www\\bbva_mexico_new\\bbva_mexico_new.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,5 @@
+desarrollo:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-c3b2f2290f4314fb4edb8f926305edbc2b1ba3fa-staging.js"></script>
+
+produccion:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-c3b2f2290f4314fb4edb8f926305edbc2b1ba3fa.js"></script>

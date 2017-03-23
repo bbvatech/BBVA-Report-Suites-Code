@@ -1,0 +1,31 @@
+Validaciones para que se ejecute el etiquetado del click 3 Nueva versión.
+
+Condiciones para ejecución previa:
+Click sobre "a,input" y url contiene "/VentasDG/3/index.html"
+
+Condiciones de campo:
+Campo nombre -> 				alfanumérico de longitud mayor de 0
+Campo apellido -> 				alfanumérico de longitud mayor de 0
+Campo día primero  -> 			numérico de 2 digitos y menor o igual a 31
+Campo mes primero  -> 			numérico de 2 digitos y menor o igual a 12
+Campo año primero  -> 			numérico de 4 digitos y menor o igual a el año en curso
+Campo departamento -> 			que esté algo seleccionado distinto del valor por defecto
+Campo ciudad -> 				que esté algo seleccionado distinto del valor por defecto
+Campo Tipo Documento -> 		que esté seleccionado un tipo de documento
+Campo Número de documento -> 	que sea número y la longitud del dato sea mayor a 0
+Campo día nacimiento  -> 		numérico de 2 digitos y menor o igual a 31
+Campo mes nacimiento  -> 		numérico de 2 digitos y menor o igual a 12
+Campo año nacimiento  -> 		numérico de 4 digitos y menor o igual a el año en curso
+Campo email ->					valida que el dato introducido tenga formato email
+Campo telefono ->				que sea un dato numerico de 10 digitos y el primer digito sea 3 y alguno de los 
+								valores del telefono a partir de la tercera posición sea distinto del valor que hay 
+								en la segunda posición. Ejm:
+								3555555555 = falso, 3555555551 = verdadero, 3000000000 = falso, 3010000000 = verdadero
+Campo Ingresos ->				Que la validación de Campo Tipo Documento sea verdadera. Si el tipo de documento es igual a "Cédula de Ciudadania"
+								y los ingresos son menores a 1.000.000 ó Si el tipo de documento es igual a "Cédula Extranjería" y los ingresos
+								son menores de 10.000.000, no se pasa la validación.
+
+Además de las condiciones previas se tiene que cumplir:
+
+1.-Verifica que la diferencia entre la fecha de nacimiento y la fecha de solicitud sea 18 años o mayor.
+

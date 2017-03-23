@@ -1,0 +1,15 @@
+desarrollo:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-d36e99f137874a1a5a2a3d54b4dac4a6a5e93fd2-staging.js"></script>
+
+produccion:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-d36e99f137874a1a5a2a3d54b4dac4a6a5e93fd2.js"></script>
+
+Identificador de Marqueting Cloud ID
+968E179156DF0B907F000101@AdobeOrg
+
+Servidor de seguimiento:
+bbvabancomer.d3.sc.omtrdc.net
+
+Usuario creación
+Login 			Name 			Web Services Username	Shared Secret
+angela.vidal	Angela Vidal	angela.vidal:BBVA		c8c41fe53dfb08607e461d33abbbc24a

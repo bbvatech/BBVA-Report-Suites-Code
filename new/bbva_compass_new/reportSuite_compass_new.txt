@@ -1,0 +1,14 @@
+desarrollo:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-f516ffe729454f82a22ff6c7b4e78587db69b27f-staging.js"></script>
+
+produccion:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-f516ffe729454f82a22ff6c7b4e78587db69b27f.js"></script>
+
+Identificador de Marqueting Cloud ID
+A4B9776A5245AD5A0A490D44@AdobeOrg
+
+Servidor de seguimiento:
+compassbank.d3.sc.omtrdc.net
+
+
+

@@ -1,0 +1,37 @@
+
+qualified Visit
+/puntos-vida/visa/signature/
+/puntos-vida/visa/platinum/
+/puntos-vida/visa/oro/
+/puntos-vida/visa/clasica/
+/puntos-vida/mastercard/black/
+/puntos-vida/mastercard/platinum/
+/puntos-vida/mastercard/oro/
+/puntos-vida/mastercard/clasica/
+/lifemiles/visa/signature/
+/lifemiles/visa/platinum/
+/lifemiles/visa/oro/
+
+app page visit
+	https://extranetdev.grupobbva.pe/Campaign/tcFastInicio.do?method=tarjetasForm
+
+app step 2 -> Preguntas Candado - (Delimitar y lanzar el completed cuando no hay preguntas candado)
+	https://extranetdev.grupobbva.pe/Campaign/tcFastCandado.do?method=tcFastCandado&tipoCliente=103
+
+app step 3 -> Información de domicilio
+	https://extranetdev.grupobbva.pe/Campaign/tcOferta.do?method=tarjetaDatoAdicional&tipoCliente=102
+
+app step 4 -> Elegir el tipo de targeta y datos de facturacion
+	https://extranetdev.grupobbva.pe/Campaign/tcFastPrograma.do?method=tcFastPrograma&tipoCliente=103
+
+app step 5 -> Dirección de envio
+	https://extranetdev.grupobbva.pe/Campaign/tcFastDirecciones.do?method=tcFastDirecciones&tipoCliente=103
+
+app step 6 -> Datos Adicionales
+	https://extranetdev.grupobbva.pe/Campaign/tcNoFastActualizacion.do?method=tcNoFastActualizacion&tipoCliente=104 
+
+app step 7 -> Página de confirmación
+	https://extranetdev.grupobbva.pe/Campaign/tcFastConfirmacion.do?method=tarjetaConfirmacion&tipoCliente=103
+
+app step 8 -> Página de fin
+	https://extranetdev.grupobbva.pe/Campaign/tcFastFin.do?method=reingresoCandado&tipoCliente=304

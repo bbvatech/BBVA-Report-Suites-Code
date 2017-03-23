@@ -1,0 +1,15 @@
+desarrollo:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-1ca8264cc555905a6ffc6866dc849568aa0a3574-staging.js"></script>
+
+produccion:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-1ca8264cc555905a6ffc6866dc849568aa0a3574.js"></script>
+
+Identificador de Marqueting Cloud ID
+B2C6CEFB570D522E7F000101@AdobeOrg
+
+Servidor de seguimiento:
+bbvacl.d3.sc.omtrdc.net
+
+angela.vidal:BBVA Chile
+84415bf263834d5efd7aa1c25c473098
+

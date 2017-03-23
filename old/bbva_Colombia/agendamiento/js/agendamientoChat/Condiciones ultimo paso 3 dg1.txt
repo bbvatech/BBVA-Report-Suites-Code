@@ -1,0 +1,30 @@
+Campos
+
+Situación Laboral -> que el campo tenga algo. Al ser un desplegable que tenga algo seleccionado distinto de selecciona
+
+inicioActividad ->
+	dia = es numero, que tenga dos digitos y que el valor sea menor o igual a 31
+	mes = es nuemro, que tenga 2 digitos y que el valor sea menor o igual a 12.
+	año = es numero, que tenga 4 dígitos y que el año sea menor o igual a año en curso.
+
+actividad económica -> que el campo tenga algo. Al ser un desplegable que tenga algo seleccionado distinto de selecciona
+
+Profesión -> que el campo tenga algo. Al ser un desplegable que tenga algo seleccionado distinto de selecciona.
+
+Tipo Vivienda -> que el campo tenga algo. Al ser un desplegable que tenga algo seleccionado distinto de selecciona
+
+Valor Vivienda -> Si el tipo de vivienda no es familia y el dato introducido en el campo tiene mas de 0 digitos y un numero mayor de 0.
+
+OK - Valor patrimonio -> que el contenido del campo contenga un alfanumérico o más (vale el dato $0)
+
+Ingresos fijos mensuales -> Valida que se haya seleccionado algo en el desplegable situación laboral y que se haya introducido algun alfanumérico en el campo. Si el valor introducido es numérico y es mayor de 2000000 y el campo de situacion laboral el distinto de independiente.
+
+Otros Ingresos -> que el contenido del campo contenga un alfanumérico o más (vale el dato $0)
+
+Valor deducciones nomina -> Si la situacion es otro o es independiente. En caso contrario(cuando la situación no es otro o independiente) que el contenido del campo contenga un alfanumérico o más (vale el dato $0)
+
+Número de personas a cargo -> si se ha introducido un valor en el campo y el valor introducido es numerico.
+
+Nivel Estudios -> que el campo tenga algo. Al ser un desplegable que tenga algo seleccionado distinto de selecciona
+
+amh33dfe

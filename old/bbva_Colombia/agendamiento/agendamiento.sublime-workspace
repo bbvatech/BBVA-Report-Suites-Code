@@ -1,0 +1,1152 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"ready",
+				"ready	$(document).ready"
+			],
+			[
+				"remove",
+				"remove	.remove()"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"test",
+				"test(string)	RegExp"
+			],
+			[
+				"regex",
+				"new RegExp()	RegExp"
+			],
+			[
+				"remov",
+				"remove	.remove()"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"eac",
+				"each	$.each()"
+			],
+			[
+				"paret",
+				"parent	.parent()"
+			],
+			[
+				"remo",
+				"removeClass	.removeClass()"
+			],
+			[
+				"tr",
+				"tr	Tag"
+			],
+			[
+				"inpu",
+				"inputr	input - radio"
+			],
+			[
+				"td",
+				"td	Tag"
+			],
+			[
+				"re",
+				"ready	$(document).ready"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"border-ra",
+				"border-top-left-radius"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"in",
+				"inputt	input - text"
+			],
+			[
+				"for",
+				"for-k"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"inde",
+				"indexOf(searchValue)	String"
+			],
+			[
+				"geta",
+				"getAttribute(attributeName)	Element"
+			],
+			[
+				"inner",
+				"innerHTML	Element"
+			],
+			[
+				"getele",
+				"getElementById(id)	Element"
+			],
+			[
+				"getda",
+				"getDay()	Date"
+			],
+			[
+				"getut",
+				"getUTCDay()	Date"
+			],
+			[
+				"getDat",
+				"getDay()	Date"
+			],
+			[
+				"div",
+				"div	<div>"
+			],
+			[
+				"settiem",
+				"setTimeout(func, delay)	Window"
+			],
+			[
+				"max",
+				"maxlength	Attr"
+			],
+			[
+				"inp",
+				"inputt	input - tel"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"blo",
+				"block"
+			],
+			[
+				"st",
+				"style	Attr"
+			],
+			[
+				"sub",
+				"substr(start)	String"
+			],
+			[
+				"su",
+				"substr(start)	String"
+			],
+			[
+				"date",
+				"new Date()	Date"
+			],
+			[
+				"scr",
+				"script	<script>"
+			],
+			[
+				"submit",
+				"submit	.submit()"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"settie",
+				"setTimeout(func, delay)	Window"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"inle",
+				"inline-block"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"table-r",
+				"table-row"
+			],
+			[
+				"ta",
+				"table-column-group"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"with",
+				"width"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"each",
+				"each	$.each()"
+			],
+			[
+				"inlcu",
+				"include	@include"
+			],
+			[
+				"mixin",
+				"mixin	@mixin"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"si",
+				"siblings	.siblings()"
+			],
+			[
+				"ea",
+				"each	$.each()"
+			],
+			[
+				"le",
+				"length	String"
+			],
+			[
+				"slickSli",
+				"slickSliceIE8LiveWidth"
+			],
+			[
+				"wid",
+				"width	Style CSS"
+			],
+			[
+				"read",
+				"ready	$(document).ready"
+			],
+			[
+				"app",
+				"appendTo	.appendTo()"
+			],
+			[
+				"top",
+				"top	Style CSS"
+			],
+			[
+				"css",
+				"css	.css() - single"
+			],
+			[
+				"pre",
+				"prepend	.prepend()"
+			],
+			[
+				"type",
+				"typeof(Object)	Object"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"sli",
+				"slick-slide"
+			],
+			[
+				"alig",
+				"text-align"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"add",
+				"addEventListener(type, listener)	EventTarget"
+			],
+			[
+				"getel",
+				"getElementsByClassName(names)	Element"
+			],
+			[
+				"alert",
+				"alert(message)	Window"
+			],
+			[
+				"attr",
+				"attr	.attr() - single"
+			],
+			[
+				"docu",
+				"document	Document"
+			],
+			[
+				"ale",
+				"alert(message)	Window"
+			],
+			[
+				"res",
+				"resize	.resize()"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"sl",
+				"slick-prev"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"bgi",
+				"bgi	background-image"
+			],
+			[
+				"incl",
+				"include	@include"
+			],
+			[
+				"function",
+				"function with name"
+			],
+			[
+				"html",
+				"html5	Simple HTML5 Boilerplate"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "js/agendamientoChat/Agendamiento Clic 3 - Nueva versión (a) - VentasDG 3.js",
+			"settings":
+			{
+				"buffer_size": 8956,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/agendamientoChat/Agendamiento Clic 3 - Nueva versión (a) - VentasDG 3.txt",
+			"settings":
+			{
+				"buffer_size": 1938,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 342.0,
+		"last_filter": "jas",
+		"selected_items":
+		[
+			[
+				"jas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"pret",
+				"HTMLPrettify"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"php",
+				"Snippet: <?php else: ?>"
+			],
+			[
+				"prety",
+				"HTMLPrettify"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"sor",
+				"Sort Lines"
+			],
+			[
+				"so",
+				"Sort Lines"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"get",
+				"Snippet: .get()"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"js line",
+				"JSHint: Set Linting Preferences"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pretti",
+				"HTMLPrettify"
+			],
+			[
+				"sasss",
+				"Set Syntax: Sass"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 510.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/www/agendamiento",
+		"/C/www/agendamiento/js",
+		"/C/www/agendamiento/js/agendamientoChat"
+	],
+	"file_history":
+	[
+		"/C/www/agendamiento/js/agendamientoChat/js_acciones_validaciones.js",
+		"/C/www/agendamiento/js/agendamientoChat/chat_evento_48.js",
+		"/C/www/agendamiento/js/agendamientoChat/Condiciones ultimo paso 3 dg1.txt",
+		"/C/www/agendamiento/index.html",
+		"/C/www/agendamiento/js/funciones_val.js",
+		"/C/www/trackingCodesGenerator/js/util_v1.js",
+		"/C/www/trackingCodesGenerator/js/util.js",
+		"/C/www/trackingCodesGenerator/js/validaciones.js",
+		"/C/www/trackingCodesGenerator/css/estilos_v1.css",
+		"/C/www/trackingCodesGenerator/main_v1.html",
+		"/C/www/trackingCodesGenerator/js/jquery.js",
+		"/C/www/trackingCodesGenerator/js/pattern.js",
+		"/C/www/trackingCodesGenerator/css/reset.css",
+		"/C/www/trackingCodesGenerator/main.html",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/xampp/apache/conf/extra/httpd-xampp.conf",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/xampp/apache/conf/extra/httpd-default.conf",
+		"/C/xampp/apache/conf/extra/proxy-html.conf",
+		"/C/xampp/apache/conf/extra/httpd-userdir.conf",
+		"/C/www/bbva_DTM/js/validaciones.js",
+		"/C/www/bbva_DTM/js/util.js",
+		"/C/www/bbva_DTM/js/pattern.js",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/patterns/SeglCsPatterns.java",
+		"/C/www/bbva_DTM/app/jade/index.jade",
+		"/C/www/bbva_DTM/dist/contenido.html",
+		"/C/www/bbva_DTM/plantillaPruebas.html",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/compruebaTipoDocumento.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/validaciones/validarCif.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/validaciones/validacionNif.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/validaciones/validarDNI.txt",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/.jshintrc",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/JAVASCRIPT_VALIDACIONES.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/JsValidaciones.js",
+		"/C/www/bbva_DTM/js/jquery-1.12.0.js",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/CadenaConexionBBDD.txt",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/patterns/patternsRegularExpresions.java",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/htmlbox.full.js",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/Snippets/JS/webtoolkit.js",
+		"/C/www/bbva_DTM/js/ejemplo_s_code_dataLayer.js",
+		"/C/www/bbva_DTM/js/telefono_mx.js",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/DefaultMetadataLoader.php",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/MetadataLoaderInterface.php",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/MultiFileMetadataSourceImpl.php",
+		"/C/www/bbva_DTM/ArchivosBase/libphonenumber-for-php-master/src/libphonenumber/NumberParseException.php",
+		"/C/Users/usuario/Desktop/dataLayer/Implantación/dataLayer_english.txt",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JsFormat/Default (Windows).sublime-keymap",
+		"/C/Users/usuario/AppData/Local/Temp/dataLayer_english.txt",
+		"/C/www/bbva_DTM/js/fecha.js",
+		"/C/www/bbva_DTM/.jshintrc",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JsFormat/JsFormat.sublime-settings",
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/JSHint Gutter/Default (Windows).sublime-keymap",
+		"/C/Users/usuario/Google Drive/XXXX_Felix/programas/programas_Utiles.txt",
+		"/C/Users/usuario/AppData/Local/Temp/Rar$DIa0.743/Readme.txt",
+		"/C/Users/usuario/Downloads/Programas/Desarrollo/sublime/Iconos/Leeme_instalacion.txt",
+		"/C/www/bbva_DTM/js/fecha_02.js",
+		"/C/www/bbva_DTM/fecha_02.html",
+		"/C/www/bbva_DTM/comprobacionNavegador.html",
+		"/C/www/bbva_svn/.git/config",
+		"/C/www/bbva_svn/app/js/main-single-page.js",
+		"/C/www/bbva_DTM/Validador_telefono_mundial.html",
+		"/C/www/bbva_DTM/delayArchivoDescarga.html",
+		"/C/www/bbva_DTM/js/demo-compiled.js",
+		"/C/www/bbva_DTM/demo-compiled.html",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/i18n/phonenumbers/demo.html",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/i18n/phonenumbers/asyoutypeformatter_test.js",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/i18n/phonenumbers/asyoutypeformatter_test.html",
+		"/C/www/bbva_DTM/libphonenumber-master/javascript/build.xml",
+		"/C/www/bbva_DTM/pruebas.html",
+		"/C/www/bbva_DTM/libphonenumber-for-php-master/src/libphonenumber/carrier/data/Map.php",
+		"/C/www/bbva_DTM/libphonenumber-for-php-master/src/libphonenumber/AlternateFormatsCountryCodeSet.php",
+		"/C/www/bbva_DTM/seguro-vehicular.htm",
+		"/C/www/bbva_DTM/ControlEventoLanzamientoSubmitFormulario.html",
+		"/C/www/bbva_DTM/css/estilos.css",
+		"/C/Users/usuario/Documents/dtm/s_code/s_code.js",
+		"/C/www/bbva_svn/app/jade/lib/variables.jade",
+		"/C/www/bbva_svn/app/sass/distributivaAzul.scss",
+		"/C/www/bbva_svn/app/jade/distributivaAzul.jade",
+		"/C/www/bbva_svn/app/js/distributivaAzul.js",
+		"/C/www/bbva_svn/app/sass/subHome.scss",
+		"/C/www/bbva_svn/app/sass/lib/_variables.scss",
+		"/C/www/bbva_svn/dist/impactoSubHome.html",
+		"/C/www/bbva_svn/app/js/subHome.js",
+		"/C/www/bbva_svn/app/jade/impactoSubHome.jade",
+		"/C/www/bbva_svn/gulpfile.js",
+		"/C/www/bbva_svn/package.json",
+		"/C/www/bbva_svn/app/jade/impactoHome.jade",
+		"/C/www/bbva_svn/dist/impactoHome.html",
+		"/C/www/bbva_svn/app/sass/main-single-page.scss",
+		"/C/www/bbva_svn/app/sass/lib/_mixins.scss",
+		"/C/www/bbva_svn/app/sass/components/_fuente.scss",
+		"/C/www/bbva_svn/dist/css/main-single-page.css",
+		"/C/www/bbva_svn/app/js/impactoSubHome.js",
+		"/C/www/bbva_svn/dist/js/main-single-page.min.js",
+		"/C/www/bbva_svn/app/js/vendor/slick.min.js",
+		"/C/www/bbva_svn/app/css/old/ie8.min.css",
+		"/C/www/bbva_svn/app/jade/old/head.jade",
+		"/C/www/bbva_svn/app/jade/old/layout.jade",
+		"/C/www/bbva_svn/dist/css/ie8.min.css",
+		"/C/www/bbva_svn/app/jade/old/header.jade",
+		"/C/www/bbva_svn/app/jade/includes/scripts.jade",
+		"/C/www/bbva_svn/app/jade/old/scripts.jade",
+		"/C/www/bbva_svn/dist/js/old/libraries.min.ver2_chile.min.js",
+		"/C/www/bbva_svn/app/js/old/libraries.min.js",
+		"/C/www/bbva_svn/app/jade/includes/head.jade",
+		"/C/Users/usuario/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.IE5/C01323DW/jquery-migrate-1.2.1.min.js",
+		"/C/www/bbva_svn/app/js/vendor/jquery_es.min.js",
+		"/C/www/bbva_svn/app/js/vendor/slick_es.js",
+		"/C/www/bbva_svn/app/js/impactoHome.js",
+		"/C/www/bbva_svn/dist/js/impactoHome.min.js",
+		"/C/www/bbva_svn/app/js/vendor/jquery.min.js",
+		"/C/www/bbva_svn/app/sass/vendor/_slick-theme.scss",
+		"/C/www/bbva_svn/app/sass/vendor/_bootstrap.min.scss",
+		"/C/www/bbva_svn/app/sass/vendor/_slick.scss",
+		"/C/www/bbva_svn/app/sass/vendor/_fixes.scss",
+		"/C/www/bbva_svn/dist/css/global.min.css",
+		"/C/Users/usuario/Desktop/Sin título-1.svg",
+		"/C/www/bbva/dist/impactoHome.html",
+		"/C/www/bbva/app/jade/impactoHome.jade",
+		"/C/www/bbva/app/js/impactoHome.js",
+		"/C/www/bbva/app/sass/main-single-page.scss",
+		"/C/www/bbva/dist/css/main-single-page.css",
+		"/C/www/bbva/app/sass/components/_fuente.scss"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<current file>",
+			"",
+			"<current file>",
+			"<open files>,<current file>",
+			"<open files>",
+			"C:\\www\\bbva_DTM\\libphonenumber-master\\javascript",
+			"C:\\www\\bbva_DTM\\libphonenumber-for-php-master",
+			"<current file>,C:\\www\\bbva_svn",
+			"<current file>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"validarAnyos",
+			"prepararFecha",
+			"validarIngresos",
+			"validarTel",
+			"validarFecha",
+			"campoRelleno",
+			"validate_date_vs_dateNow",
+			"validate",
+			"lb_costhousing",
+			"validaFecha",
+			"table",
+			"label",
+			"adSize",
+			"txtAds",
+			"window.universal_variable = {\n    \"version\": \"\",\n    \"page\": {\n        \"name\": \"\",\n        \"type\": \"\",\n        \"subtype\": \"\",\n        \"search\": \"\",\n        \"criteo_p\": \"\",\n        \"criteo_wi\": \"\",\n        \"cid\": \"\",\n        \"partner_id\": \"\",\n        \"page_language\": \"\",\n        \"criteo_subdomain\": \"\"\n    },\n    \"product\": {\n        \"id\": \"\",\n        \"hotel_id_list\": \"\",\n        \"hotel_id_list_criteo\": \"\",\n        \"url\": \"\",\n        \"name\": \"\",\n        \"category\": \"\",\n        \"currency\": \"\",\n        \"unit_price\": \"\",\n        \"voucher\": \"\",\n        \"destination_id\": \"\",\n        \"destination\": \"\",\n        \"city\": \"\",\n        \"country\": \"\",\n        \"country_id\": \"\",\n        \"state\": \"\",\n        \"nights\": \"\",\n        \"number_guests\": \"\",\n        \"number_adults\": \"\",\n        \"number_child\": \"\",\n        \"number_babies\": \"\",\n        \"num_rooms\": \"\",\n        \"check_in_date\": \"\",\n        \"check_out_date\": \"\",\n        \"unix_check_in_date\": \"\",\n        \"unix_check_out_date\": \"\",\n        \"google_check_in_date\": \"\",\n        \"google_check_out_date\": \"\",\n        \"booking_dates\": \"\",\n        \"room_type_code\": \"\",\n        \"rate\": \"\"\n    },\n    \"user\": {\n        \"user_id\": \"\",\n        \"login\": \"\",\n        \"type\": \"\",\n        \"barcelo_ip_country\": \"\",\n        \"barcelo_country_region\": \"\"\n    },\n    \"listing\": {\n        \"query\": \"\",\n        \"booking_window\": \"\"\n    },\n    \"transaction\": {\n        \"order_id\": \"\",\n        \"order_id_hpa\": \"\",\n        \"cancel\": \"\",\n        \"update\": \"\",\n        \"comp_list\": \"\",\n        \"importe_comp\": \"\",\n        \"total_comp\": \"\",\n        \"upsell\": \"\",\n        \"importe_upsell\": \"\",\n        \"date\": \"\",\n        \"guests\": \"\",\n        \"currency\": \"\",\n        \"subtotal\": \"\",\n        \"subtotal_include_tax\": \"\",\n        \"voucher\": \"\",\n        \"tax\": \"\",\n        \"total\": \"\",\n        \"criteo_total\": \"\",\n        \"pay_out_code\": \"\",\n        \"booking_id\": \"\",\n        \"booking_window\": \"\",\n        \"booking_cancel_window\": \"\",\n        \"cancel_checkin_window\": \"\",\n        \"payment_method\": \"\"\n    }\n}\n",
+			": \".+\"\\n",
+			": \".+\",",
+			"window.universal_variable = {\n    \"version\": \"\",\n    \"page\": {\n        \"name\": \"\",\n        \"type\": \"\",\n        \"subtype\": \"\",\n        \"search\": \"\",\n        \"criteo_p\": \"\",\n        \"criteo_wi\": \"\",\n        \"cid\": \"\",\n        \"partner_id\": \"\",\n        \"page_language\": \"\",\n        \"criteo_subdomain\": \"\"\n    },\n    \"product\": {\n        \"id\": \"\",\n        \"hotel_id_list\": \"\",\n        \"hotel_id_list_criteo\": \"\",\n        \"url\": \"\",\n        \"name\": \"\",\n        \"category\": \"\",\n        \"currency\": \"\",\n        \"unit_price\": \"\",\n        \"voucher\": \"\",\n        \"destination_id\": \"\",\n        \"destination\": \"\",\n        \"city\": \"\",\n        \"country\": \"\",\n        \"country_id\": \"\",\n        \"state\": \"\",\n        \"nights\": \"\",\n        \"number_guests\": \"\",\n        \"number_adults\": \"\",\n        \"number_child\": \"\",\n        \"number_babies\": \"\",\n        \"num_rooms\": \"\",\n        \"check_in_date\": \"\",\n        \"check_out_date\": \"\",\n        \"unix_check_in_date\": \"\",\n        \"unix_check_out_date\": \"\",\n        \"google_check_in_date\": \"\",\n        \"google_check_out_date\": \"\",\n        \"booking_dates\": \"\",\n        \"room_type_code\": \"\",\n        \"rate\": \"\"\n    },\n    \"user\": {\n        \"user_id\": \"\",\n        \"login\": \"\",\n        \"type\": \"\",\n        \"barcelo_ip_country\": \"\",\n        \"barcelo_country_region\": \"\"\n    },\n    \"listing\": {\n        \"query\": \"\",\n        \"booking_window\": \"\"\n    },\n    \"transaction\": {\n        \"order_id\": \"\",\n        \"order_id_hpa\": \"\",\n        \"cancel\": \"\",\n        \"update\": \"\",\n        \"comp_list\": \"\",\n        \"importe_comp\": \"\",\n        \"total_comp\": \"\",\n        \"upsell\": \"\",\n        \"importe_upsell\": \"\",\n        \"date\": \"\",\n        \"guests\": \"\",\n        \"currency\": \"\",\n        \"subtotal\": \"\",\n        \"subtotal_include_tax\": \"\",\n        \"voucher\": \"\",\n        \"tax\": \"\",\n        \"total\": \"\",\n        \"criteo_total\": \"\",\n        \"pay_out_code\": \"\",\n        \"booking_id\": \"\",\n        \"booking_window\": \"\",\n        \"booking_cancel_window\": \"\",\n        \"cancel_checkin_window\": \"\",\n        \"payment_method\": \"\"\n    }\n}",
+			"        \"category\": \"\",\n        \"currency\": \"\",\n        \"unit_price\": \"\",\n        \"voucher\": \"\",\n        \"destination_id\": \"\",\n        \"destination\": \"\",",
+			": \".+\"\\n",
+			": \".+\",",
+			": \".+\"",
+			": \"0\"",
+			": \"0\",",
+			": \".+\",",
+			": \".+\",|: \".+\"",
+			"  \"listing\" : {\n    \"query\": \"\",\n    \"booking_window\": \"\"\n  },",
+			"    \"order_id\": \"\",\n    \"order_id_hpa\": \"\",\n    \"cancel\": \"\",",
+			"    \"upsell\": \"\",\n    \"importe_upsell\": \"\",\n    \"date\": \"\",",
+			" \"currency\": \"\",",
+			": \".+\",|: \".+\"",
+			": \"0\",",
+			"fecha",
+			"txtCreativeID",
+			"\";\"",
+			"ALFANUMERICO",
+			"PATTERN_A2",
+			"ALFANUMERICO",
+			"TELEFO",
+			"cif",
+			"mail",
+			"SEGL_",
+			"public static final String",
+			"\n            ",
+			"move",
+			"=",
+			"= ",
+			"C",
+			"D",
+			"4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6",
+			"d{8}|(?:2(?:0[01]|2[2-9]|3[1-35-8]",
+			"d{8}|(?:2(?:0[01]|2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])",
+			"(?:2(?:0[01]|2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]",
+			"(?:2(?:0[01]|2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[234][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))",
+			"7[1-378]|9[12479])",
+			"\\\\d{7}\", \"\\\\d{7,10}\", , , \"2221234567\"",
+			"?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]",
+			"(?:2(?:2[2-9]|3[1-35-8]|4[13-9]|7[1-689]|8[1-578]|9[467])|3(?:1[1-79]|[2458][1-9]|7[1-8]|9[1-5])|4(?:1[1-57-9]|[24-6][1-9]|[37][1-8]|8[1-35-9]|9[2-689])|5(?:88|9[1-79])|6(?:1[2-68]|[2-4][1-9]|5[1-3689]|6[12457-9]|7[1-7]|8[67]|9[4-8])|7(?:[13467][1-9]|2[1-8]|5[13-9]|8[1-69]|9[17])|8(?:2[13-689]|3[1-6]|4[124-6]|6[1246-9]|7[1-378]|9[12479])|9(?:1[346-9]|2[1-4]|3[2-46-8]|5[1348]|[69][1-9]|7[12]|8[1-8]))",
+			"match",
+			"db",
+			"K",
+			"ES",
+			"MX",
+			"function PhoneNumber",
+			"PhoneNumber",
+			"MX",
+			"mx",
+			"phoneNumberParser",
+			"db",
+			"MX",
+			"valid",
+			"MX",
+			"34",
+			"mexico",
+			"ES",
+			"es",
+			"sp",
+			"Yoigo",
+			"Vodafone",
+			"Movistar",
+			"telefonica",
+			"34",
+			"btnEnviar",
+			"form",
+			"btnEnviar",
+			"oncli",
+			"form",
+			"btnEnviar",
+			"form",
+			"sub",
+			"padding",
+			"img",
+			"font",
+			"subH",
+			"sub",
+			"subhome",
+			"img",
+			"slickSliceIE8",
+			"padding",
+			"img",
+			"paddin",
+			"img",
+			"ajuste",
+			"3",
+			"include",
+			"setWidthPill",
+			"ajusteSlick",
+			"SetIframeHeight",
+			"slideHandler",
+			"click",
+			"setTextSizePill",
+			"slick-next slick-arrow",
+			"sizeTexto39",
+			"i()",
+			"           \n",
+			"ready",
+			"attib",
+			"dots",
+			"dos",
+			"i() && i() < 9",
+			"i()",
+			".slice",
+			"slice",
+			"i(",
+			"msie",
+			"ie",
+			"  \n",
+			"href"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			":\"\"",
+			":\"\",",
+			":\"\"",
+			":\"\",",
+			":\"\"",
+			":\"\",",
+			":\"\"",
+			"\"\"",
+			"\":\"",
+			"",
+			"var",
+			"var ",
+			":",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "js/agendamientoChat/Agendamiento Clic 3 - Nueva versión (a) - VentasDG 3.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7995,
+								8007
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3057.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/agendamientoChat/Agendamiento Clic 3 - Nueva versión (a) - VentasDG 3.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1936,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 26.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "agendamiento.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\www\\bbva_peru\\bbva_peru.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

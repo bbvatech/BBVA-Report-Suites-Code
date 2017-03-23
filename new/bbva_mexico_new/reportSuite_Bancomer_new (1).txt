@@ -1,0 +1,11 @@
+desarrollo:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-fbdb84ebd99368b1f7fb97b75596c095b9f7ee40-staging.js"></script>
+
+produccion:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-fbdb84ebd99368b1f7fb97b75596c095b9f7ee40.js"></script>
+
+Identificador de Marqueting Cloud ID
+968E179156DF0B907F000101@AdobeOrg
+
+Servidor de seguimiento:
+bbvabancomer.d3.sc.omtrdc.net

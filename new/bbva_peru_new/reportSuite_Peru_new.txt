@@ -1,0 +1,12 @@
+desarrollo:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-9a778c913685518cc1bbbb48482a6f68b81ea9ca-staging.js"></script>
+
+produccion:
+<script src="//assets.adobedtm.com/95bb966a4c61b200a089c37679aaf96e22114787/satelliteLib-9a778c913685518cc1bbbb48482a6f68b81ea9ca.js"></script>
+
+Identificador de Marqueting Cloud ID
+FB99EDA0570E88407F000101@AdobeOrg
+
+Servidor de seguimiento:
+bbvape.d3.sc.omtrdc.net
+

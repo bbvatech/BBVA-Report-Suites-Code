@@ -1,0 +1,28 @@
+Cambio de código en app.js
+Linea 17781:
+Sustituir _satellite.track('errorPage'); por tms_track('errorPage',digitalData);
+
+Línea 17458:
+Sustituir _satellite.track("logIn Correcto"); por tms_track('LogIn', digitalData);
+
+La función setSatelliteTracks por esta.
+        var setSatelliteTracks = function(data) {
+            try {
+                if (angular.isDefined(data) && isAdditionalTracksSet(data.config)) {
+                    var satellites = data.position.SATELLITES;
+                    var qV = false;
+                    for (var i = 0; i < satellites.length; i++) {
+                        if (satellites[i] == 'qualifiedVisit') {
+                            qV = true;
+                            break;
+                        }
+                    }
+                    tms_funnel((satellites.length - 1), digitalData, qV);
+                } else {
+                    tms_track('HuellaAvanzadaPartePrivada', digitalData);
+                    console.info('TMS Track: huellaAvanzadaPartePrivada');
+                }
+            } catch (e) {
+                console.info('Analytics: error loading script or getting track method');
+            }
+        };
