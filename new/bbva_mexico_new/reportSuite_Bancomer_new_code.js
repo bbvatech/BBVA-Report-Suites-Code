@@ -27,6 +27,8 @@ s.visitor=Visitor.getInstance("968E179156DF0B907F000101@AdobeOrg",{
 if(_satellite.readCookie("sessionID") === undefined || _satellite.readCookie("sessionID") == "" || _satellite.readCookie("sessionID").length == 0)
   _satellite.track('cookie sessionID');
 _satellite.getVar("setSerializacion");
+_satellite.getVar("setFunctions");
+
 
 /* You may add or alter any code config here. */
 s.debugTracking=false;
@@ -83,7 +85,7 @@ function s_doPlugins(s) {
     // event221 will be set to the number of pages loaded
     s.prop22 = s_getLoadTime();
     //s.eVar24 = s.getDaysSinceLastVisit("s_lv"); //Se elimina por decisión de negocio
-    s.eVar25 =  s.getNewRepeat(30, "s_nr");
+    s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
     s.eVar34 =  s.getVisitNum();
 
@@ -93,12 +95,6 @@ function s_doPlugins(s) {
         s.prop18 = ppvArray[1] //contains the highest percent viewed of the previous page
         s.prop19 = ppvArray[2] //contains the percent of the previous page viewed on its initial load
         s.prop20 = ppvArray[3] //contains the highest number of vertical pixels viewed of the previous page
-    }
-    if (typeof(mboxCurrent)!="undefined" && s.visitor != undefined && s.visitor._supplementalDataIDCurrent == "" && s.visitor._supplementalDataIDLast != "") {
-        s.visitor._supplementalDataIDCurrent = s.visitor._supplementalDataIDLast;
-        s.visitor._supplementalDataIDLast = "";
-        // s.visitor._supplementalDataIDCurrentConsumed = s.visitor._supplementalDataIDLastConsumed;
-        s.visitor._supplementalDataIDLastConsumed = {};
     }
 
 }
@@ -268,8 +264,6 @@ s.Media.onLoad = function() {
 
 /**********************MEDIA CONFIG END*********************/
 /**********************FUNCIONES INI********************/
-//Elimina los acentos y pasa a minusculas
-var formatearTexto=function(){for(var r="ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",a="AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",o={},t=0,e=r.length;t<e;t++)o[r.charAt(t)]=a.charAt(t);return function(r){r=r.toLowerCase(r);for(var a=[],t=0,e=r.length;t<e;t++){var n=r.charAt(t);o.hasOwnProperty(r.charAt(t))?a.push(o[n]):a.push(n)}return a.join("")}}();
 
 /**********************FUNCIONES FIN********************/
 
@@ -562,21 +556,27 @@ s.handlePPVevents = function() {
         for (var e = 0, n = s_c_il.length; e < n; e++)
             if ("undefined" != typeof s_c_il[e] && s_c_il[e]._c && "s_c" == s_c_il[e]._c) {
                 var t = s_c_il[e];
-                break }
+                break
+            }
         if (t && t.getPPVid) {
             var d = Math.max(Math.max(null != t.d.body ? t.d.body.scrollHeight : 0, t.d.documentElement.scrollHeight), Math.max(null != t.d.body ? t.d.body.offsetHeight : 0, t.d.documentElement.offsetHeight), Math.max(null != t.d.body ? t.d.body.clientHeight : 0, t.d.documentElement.clientHeight)),
                 i = window.innerHeight || (t.d.documentElement.clientHeight || null != t.d.body ? t.d.body.clientHeight : 0),
-                l = window.pageYOffset || window.document.documentElement.scrollTop || window.document.body!=null?window.document.body.scrollTop:0,
+                l = window.pageYOffset || window.document.documentElement.scrollTop || window.document.body != null ? window.document.body.scrollTop : 0,
                 a = l + i,
                 o = Math.min(Math.round(a / d * 100), 100),
-                c = "";!t.c_r("tp") || decodeURIComponent(t.c_r("s_ppv").split(",")[0]) != t.getPPVid || "1" == t.ppvChange && t.c_r("tp") && d != t.c_r("tp") ? (t.c_w("tp", d), t.c_w("s_ppv", "")) : c = t.c_r("s_ppv");
+                c = "";
+            !t.c_r("tp") || decodeURIComponent(t.c_r("s_ppv").split(",")[0]) != t.getPPVid || "1" == t.ppvChange && t.c_r("tp") && d != t.c_r("tp") ? (t.c_w("tp", d), t.c_w("s_ppv", "")) : c = t.c_r("s_ppv");
             var s = c && c.indexOf(",") > -1 ? c.split(",", 4) : [],
                 h = s.length > 0 ? s[0] : escape(t.getPPVid),
                 p = s.length > 1 ? parseInt(s[1]) : 0,
                 r = s.length > 2 ? parseInt(s[2]) : o,
                 P = s.length > 3 ? parseInt(s[3]) : 0,
                 v = o > 0 ? h + "," + (o > p ? o : p) + "," + r + "," + (a > P ? a : P) : "";
-            t.c_w("s_ppv", v) } } }, s.getPercentPageViewed = function(e, n) {
+            t.c_w("s_ppv", v)
+        }
+    }
+}
+s.getPercentPageViewed = function(e, n) {
     var t = this,
         d = !t.getPPVid;
     if (e = e ? e : t.pageName ? t.pageName : document.location.href, t.ppvChange = n ? n : "1", "undefined" != typeof t.linkType && "0" != t.linkType && "" != t.linkType && "e" != t.linkType) return "";
@@ -584,8 +584,11 @@ s.handlePPVevents = function() {
         l = i.indexOf(",") > -1 ? i.split(",", 4) : [];
     if (l && l.length < 4) {
         for (var a = 3; a > 0; a--) l[a] = a < l.length ? l[a - 1] : "";
-        l[0] = "" }
-    return l && (l[0] = unescape(l[0])), t.getPPVid && t.getPPVid == e || (t.getPPVid = e, t.c_w("s_ppv", escape(t.getPPVid)), t.handlePPVevents()), d && (window.addEventListener ? (window.addEventListener("load", t.handlePPVevents, !1), window.addEventListener("click", t.handlePPVevents, !1), window.addEventListener("scroll", t.handlePPVevents, !1), window.addEventListener("resize", t.handlePPVevents, !1)) : window.attachEvent && (window.attachEvent("onload", t.handlePPVevents), window.attachEvent("onclick", t.handlePPVevents), window.attachEvent("onscroll", t.handlePPVevents), window.attachEvent("onresize", t.handlePPVevents))), "-" != e ? l : l[1] };
+        l[0] = ""
+    }
+    return l && (l[0] = unescape(l[0])), t.getPPVid && t.getPPVid == e || (t.getPPVid = e, t.c_w("s_ppv", escape(t.getPPVid)), t.handlePPVevents()), d && (window.addEventListener ? (window.addEventListener("load", t.handlePPVevents, !1), window.addEventListener("click", t.handlePPVevents, !1), window.addEventListener("scroll", t.handlePPVevents, !1), window.addEventListener("resize", t.handlePPVevents, !1)) : window.attachEvent && (window.attachEvent("onload", t.handlePPVevents), window.attachEvent("onclick", t.handlePPVevents), window.attachEvent("onscroll", t.handlePPVevents), window.attachEvent("onresize", t.handlePPVevents))), "-" != e ? l : l[1]
+}
+
 /*
  * Plugin: getTimeParting 3.4
  */
@@ -660,6 +663,83 @@ s.gtfs=new Function(""
 +"var w=window,l=w.location,d=document,u;if(!l.origin)l.origin=l.prot"
 +"ocol+'//'+l.hostname+(l.port?':'+l.port:'');u=l!=w.parent.location?"
 +"d.referrer:d.location;return{location:s.parseUri(u)}");
+
+/************************** ADSERV VARIABLES **************************/
+/* @TODO: Fill in these variables with the settings mapped in the
+ * ADSERV wizard and that match your desired preferences. 
+ * @TODO: Comments should be removed in a production deployment. */
+var adservConfig = {
+    tEvar: 'eVar82', // Transfer variable, typically the "View Through" eVar.
+    aID: '160911', // Advertiser ID
+    cID: '984460', // Conversion Tag ID
+    gID: 'EB_ACM:', // Genesis ID
+    requestURL: "http://bs.serving-sys.com/BurstingPipe/ActivityServer.bs?cn=as&vn=omn&activityID=[cID]&advID=[aID]&var=[VAR]&rnd=[RAND]", // the Sizmek request URL
+    maxDelay: "750", // The maximum time to wait for ADSERV servers to respond, in milliseconds.
+    visitCookie: "s_adserv", // The name of the visitor cookie to use to restrict ADSERV calls to once per visit.
+    clickThroughParam: "CID", // A query string paramter that will force the ADSERV call to occur.
+    searchCenterParam: undefined, // SearchCenter identifier.
+};
+/************************ END ADSERV Variables ************************/
+
+s.maxDelay = adservConfig.maxDelay;
+/*
+ * Partner Plugin: ADSERV Check 1.0 - Restrict ADSERV calls to once a visit, per report suite, per click
+ * through. Used in conjunction with genesis_event_config table. Deduplicates SCM hits.
+ */
+s.partnerADSERVCheck = new Function("cfg", "" + "var s=this,c=cfg.visitCookie,src=cfg.clickThroughParam,scp=cfg.searchCenterParam,tv=cfg.tEvar,dl=',',cr,nc,q,g,gs,i,j,k,fnd,v=1," + "t=new Date,cn=0,ca=new Array,aa=new Array,cs=new Array;t.setTime(t.getTime()+1800000);cr=s.c_r(c);if(cr){v=0;}ca=s.split(cr,dl);" + "if(s.un)aa=s.split(s.un,dl);else aa=s.split(s.account,dl);for(i=0;i<aa.length;i++){fnd = 0;for(j=0;j<ca.length;j++){if(aa[i] == ca[j]){fnd=1;}}if(!fnd){cs[cn]=aa[i];c" + "n++;}}if(cs.length){for(k=0;k<cs.length;k++){nc=(nc?nc+dl:'')+cs[k];}cr=(cr?cr+dl:'')+nc;v=1;}if(s.wd)q=s.wd.location.search.toLowerCase(" + ");else q=s.w.location.search.toLowerCase();q=s.repl(q,'?','&');g=q.indexOf('&'+src.toLowerCase()+'=');gs=(scp)?q.indexOf('&'+scp.toLowerCase()+'='):-1;if(g>-1){v=1;}else i" + "f(gs>-1){v=0;s.vpr(tv,'SearchCenter Visitors');}if(!s.c_w(c,cr,t)){s.c_w(c,cr,0);}if(!s.c_r(c)){v=0;}return v>=1;");
+
+/********************************************************************
+ *
+ * Supporting functions that may be shared between plug-ins
+ *
+ *******************************************************************/
+
+/*
+ * Utility Function: vpr - set the variable vs with value v
+ */
+s.vpr = new Function("vs", "v",
+    "if(typeof(v)!='undefined'){var s=this; eval('s.'+vs+'=\"'+v+'\"')}");
+
+/*
+ * Utility Function: split v1.5 - split a string (JS 1.0 compatible)
+ */
+s.split = new Function("l", "d", "" + "var i,x=0,a=new Array;while(l){i=l.indexOf(d);i=i>-1?i:l.length;a[x++]=l.substring(0,i);l=l.substring(i+d.length);}return a");
+
+/*
+ * Plugin Utility: Replace v1.0
+ */
+s.repl = new Function("x", "o", "n", "" + "var i=x.indexOf(o),l=n.length;while(x&&i>=0){x=x.substring(0,i)+n+x.substring(i+o.length);i=x.indexOf(o,i+l)}return x");
+
+s.loadModule("Integrate");
+s.Integrate.onLoad = function(s, m) {
+    var adservCheck = s.partnerADSERVCheck(adservConfig);
+    if (adservCheck) {
+        s.Integrate.add("Sizmek_ACM");
+        s.Integrate.Sizmek_ACM.tEvar = adservConfig.tEvar;
+        s.Integrate.Sizmek_ACM.aID = adservConfig.aID;
+        s.Integrate.Sizmek_ACM.cID = adservConfig.cID;
+        s.Integrate.Sizmek_ACM.gID = adservConfig.gID;
+        s.Integrate.Sizmek_ACM.tVar = adservConfig.tEvar;
+        s.Integrate.Sizmek_ACM.get(adservConfig.requestURL);
+
+        s.Integrate.Sizmek_ACM.setVars = function(s, p) {
+            var
+                at = p.lastImpTime,
+                a1 = p.lastImpSId,
+                a2 = p.lastImpPId,
+                a3 = p.lastImpId,
+                bt = p.lastClkTime,
+                b1 = p.lastClkSId,
+                b2 = p.lastClkPId,
+                b3 = p.lastClkId;
+
+            if (((at && a1 && a2 && a3) || (bt && b1 && b2 && b3)) && !p.errorCode) s[p.tVar] = adservConfig.gID + (at ? at : 0) + ":" + (a1 ? a1 : 0) + ":" + (a2 ? a2 : 0) + ":" + (a3 ? a3 : 0) + ":" + (bt ? bt : 0) + ":" + (b1 ? b1 : 0) + ":" + (b2 ? b2 : 0) + ":" + (b3 ? b3 : 0)
+        }
+    }
+}
+
+
+
 /****************************** PLUGINS INI **********************************/
 s.doPlugins=s_doPlugins;
 /****************************** MODULES *****************************/

@@ -13,8 +13,6 @@ if(productCategory.length > 0){
 
 // Establecemos los valores para la serialización de eventos
 //Codigos bancomer
-// Establecemos los valores para la serialización de eventos
-//Codigos bancomer
 window.productIDs = [];
 window.productIDs["inversiones:planes de pensiones"] = "ipp";
 window.productIDs["prestamos:credito de nomina"] = "pcn";
@@ -32,6 +30,7 @@ window.productIDs["inversiones:fondos"] = "inf";
 window.productIDs["inversiones:plazo"] = "inp";
 window.productIDs["seguros:seguro conductor responsable"] = "scr";
 window.productIDs["seguros:seguro contenidos del hogar"] = "sch";
+window.productIDs["prestamos:adelanto sueldo"] = "pas";
 window.applicationIDs = [];
 window.applicationIDs["simulador:simulador pensiones"] = "000";
 window.applicationIDs["simulador:simulador credito nomina"] = "001";
@@ -54,7 +53,11 @@ window.applicationIDs["contratacion:inversion a plazo one click"] = "017";
 window.applicationIDs["contratacion:seguro conductor responsable one click"] = "018";
 window.applicationIDs["contratacion:seguro contenidos del hogar one click"] = "019";
 window.applicationIDs["contratacion:recolocacion consumo one click"] = "020";
+window.applicationIDs["contratacion:precalificador hipoteca"] = "021";
+window.applicationIDs["simulador:simulador hipotecario"] = "022";
+window.applicationIDs["contratacion:adelanto sueldo"] = "023";
+window.applicationIDs["contratacion:compra fondos de inversion one click"] = "024";
 
-
+return true;
 
 
