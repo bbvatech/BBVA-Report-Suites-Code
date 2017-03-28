@@ -32,6 +32,7 @@ window.tms_O = {
         "scrollcomplete": "scrollcomplete",
         "errorpage": "errorpage",
         "enlaceexterno": "enlaceexterno",
+        "interno": "interno",
         "enlacedescaga": "enlacedescaga",
         "internalcampaignclick": "internalcampaignclick",
         "enviobuscador": "enviobuscador"
@@ -430,6 +431,11 @@ window.tms_track = function(evento, aux, qV) {
                     s.eVar6 = "descarga;" + dD.page.pageActivity.download.name + ";" + dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName;
                     nombreEnlace = dD.page.pageActivity.download.url;
                     break;
+                case tms_O.clickEsp.interno:
+                    s.events = s.linkTrackEvents = "event6";
+                    s.eVar6 = "interno;" + dD.page.pageActivity.internalClick.name + ";" + dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName;
+                    nombreEnlace = dD.page.pageActivity.internalClick.name;
+                    break;
                 case tms_O.clickEsp.internalcampaignclick:
                     s.list2 = dD.internalCampaign.event.eventInfo.siteActionName;
                     s.eVar35 = dD.internalCampaign.event.eventInfo.siteActionName;
@@ -452,7 +458,7 @@ window.tms_track = function(evento, aux, qV) {
             }
             //Establecemos las eVars y props que van a enviarse en el evento.
             setLinkTrackVars();
-            s.tl(this, evento == tms_O.clickEsp.enlacedescaga ? "d" : evento == tms_O.clickEsp.enlaceexterno ? "e" : "o", nombreEnlace);
+            s.tl(this, evento == tms_O.clickEsp.enlacedescaga ? "d" : evento == tms_O.clickEsp.enlaceexterno ? "e" : "o", formatearTexto(nombreEnlace));
             window.localStorage.getItem("sdsat_debug") == "true" ? console.log("SATELLITE: fired %c" + tms_O.fnLaunch + ": evento s.tl() " + evento.toUpperCase(), "color:#D94800;background:#ccc;", dD) : "";
 
             //Eliminamos la variable clonada
