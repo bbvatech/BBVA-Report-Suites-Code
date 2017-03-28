@@ -1,61 +1,55 @@
-/* Analytics code version: AppMeasurement JS 1.6.4, with standard 's' object.
-LAST UPDATED: 06-23-2016 */
+/************************** CONFIG SECTION **************************/
+// Función para recuperar account
+function getAnalyticsAccount() {
+    for (var toolid in _satellite.tools) {
+        if (_satellite.tools[toolid].settings.engine == "sc") {
+            return _satellite.tools[toolid].settings.account;
+        }
+    }
+}
+//Definimos objeto 's' y evitamos que se sobreescriba
 Object.defineProperty(window,'s', {
     enumerable:true,
     configurable:false,
     writable: false,
     value: new AppMeasurement()
 })
-//var s = new AppMeasurement();
-s.abort = true; //Impide que se lance una huella en la carga de la libreria
+// Asignamos account al objeto
+s.account = getAnalyticsAccount();
 
-if(_satellite &&_satellite.settings.isStaging==true)
-    r_suite='bbvaban.vida.2017.dev'; //dev suite 
-
-
-var s_account=s.account
-
-/******** VISITOR ID SERVICE Request, assumes visitor ID service  is configured in DTM ********/
+// Asignamos visitorId en función del tracking server
 s.visitor=Visitor.getInstance("968E179156DF0B907F000101@AdobeOrg",{
     trackingServer: "bbvabancomer.d3.sc.omtrdc.net"
 });
 
-/************************** CONFIG SECTION **************************/
+// Cookie de sessionID
 if(_satellite.readCookie("sessionID") === undefined || _satellite.readCookie("sessionID") == "" || _satellite.readCookie("sessionID").length == 0)
   _satellite.track('cookie sessionID');
-_satellite.getVar("setSerializacion");
 
-/* You may add or alter any code config here. */
-s.debugTracking=false;
-//Configuración de cookies
+// Serialización
+_satellite.getVar("setSerializacion");
 s.cookieDomainPeriods = "2";
+
+// Seteamos el dominio de la cookie en función del hostname
 if (window.location.hostname.indexOf(".com.mx") > 0) {
   s.visitor.cookieDomain = "bbvanet.com.mex"
   s.cookieDomain = "bbvanet.com.mex"
   s.cookieDomainPeriods = "5";
 }
 
-/* Link Tracking Config */
-s.trackDownloadLinks=false;
-s.trackExternalLinks=false;
-s.forcedLinkTrackingTimeout = 1000; //Tiempo de espera para lanzar tl
-s.useForcedLinkTracking = true; //Forzamos si hay una regla tl a lanzar el evento antes de redirigir al href del link
-s.trackInlineStats=true;
-//s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx" //optional: add your download file types here if not setting in DTM interface
-//s.linkInternalFilters="javascript:,stg-www.optum.com,www.optum.com" //optional: add your internal domains here if not setting in DTM interface
-s.linkLeaveQueryString=false;
-s.linkTrackVars="eVar24,prop22,eVar25,eVar34,prop18,prop19,prop20";
-s.linkTrackEvents="";
-s.events = "";
+//console.log("en configuracion");
+
+/* Plugin Config */
 
 //Europe Daylight Savings Dates for timeparting plugin
 s._tpDST = {
-2014:'3/30,10/26',
-2015:'3/29,10/25',
-2016:'3/27,10/30',
-2017:'3/26,10/29',
-2018:'3/25,10/28',
-2019:'3/31,10/27'}
+  2014:'3/30,10/26',
+  2015:'3/29,10/25',
+  2016:'3/27,10/30',
+  2017:'3/26,10/29',
+  2018:'3/25,10/28',
+  2019:'3/31,10/27'
+}
 
 /* Form Analysis Config (should be above doPlugins section) */
 s.formList = "";
@@ -65,50 +59,30 @@ s.useCommerce = true;
 s.varUsed = "eVar2";
 s.eventList = "event3,event1,event2"; //Abandon,Success,Error
 
-/* uncomment below to use doPlugins */
-s.usePlugins=true;
-function s_doPlugins(s) {
-    // use implementation plug-ins that are defined below
-    // in this section. For example, if you copied the append
-    // list plug-in code below, you could call:
-    // s.events=s.apl(s.events,"event1",",",1);
-    // s.setupFormAnalysis();
-    // s.eVar99 = s.getLoadTime("browserapi","event220","event221");
-    // The getLoadTime plugin will use the browser api method.
-    // eVar99 will be set to the browser and version
-    // event220 will be set to the seconds it took to load the page
-    // event221 will be set to the number of pages loaded
-    s.prop22 = s_getLoadTime();
-    //s.eVar24 = s.getDaysSinceLastVisit("s_lv"); //Se elimina por decisión de negocio
-    s.eVar25 =  s.getNewRepeat(30, "s_nr");
-    s.campaign = s.Util.getQueryParam("cid");
-    s.eVar34 =  s.getVisitNum();
-
+// Utilización de doPlugins
+s.usePlugins = true;
+s.doPlugins = function(s) {
+  // console.log("dentro de doplugins");
+  s.campaign = s.Util.getQueryParam("cid");
+  s.prop22 = s_getLoadTime();
+    s.eVar25 = s.getNewRepeat(30, "s_nr");
+    s.eVar34 = "+1";
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
-        //s.prop21 = ppvArray[0] //contains the previous page name
         s.prop18 = ppvArray[1] //contains the highest percent viewed of the previous page
         s.prop19 = ppvArray[2] //contains the percent of the previous page viewed on its initial load
         s.prop20 = ppvArray[3] //contains the highest number of vertical pixels viewed of the previous page
     }
-    if (typeof(mboxCurrent)!="undefined" && s.visitor != undefined && s.visitor._supplementalDataIDCurrent == "" && s.visitor._supplementalDataIDLast != "") {
-        s.visitor._supplementalDataIDCurrent = s.visitor._supplementalDataIDLast;
-        s.visitor._supplementalDataIDLast = "";
-        // s.visitor._supplementalDataIDCurrentConsumed = s.visitor._supplementalDataIDLastConsumed;
-        s.visitor._supplementalDataIDLastConsumed = {};
-    }
-
 }
-s.doPlugins = s_doPlugins;
+// Module Media
 s.loadModule("Media");
 /**********************MEDIA CONFIG INI*********************/
 var video_obj = null;
 var video_length = 0;
 var video_name = 'Movie name ' + new Date().getTime();
 
-
 // 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
+// after the API code downloads.
 var player = [];
 //onYouTubeIframeAPIReadyDTM();
 
@@ -264,6 +238,7 @@ s.Media.onLoad = function() {
 }
 
 /**********************MEDIA CONFIG END*********************/
+
 /**********************FUNCIONES INI********************/
 //Elimina los acentos y pasa a minusculas
 var formatearTexto=function(){for(var r="ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",a="AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",o={},t=0,e=r.length;t<e;t++)o[r.charAt(t)]=a.charAt(t);return function(r){r=r.toLowerCase(r);for(var a=[],t=0,e=r.length;t<e;t++){var n=r.charAt(t);o.hasOwnProperty(r.charAt(t))?a.push(o[n]):a.push(n)}return a.join("")}}();
@@ -658,7 +633,7 @@ s.gtfs=new Function(""
 +"ocol+'//'+l.hostname+(l.port?':'+l.port:'');u=l!=w.parent.location?"
 +"d.referrer:d.location;return{location:s.parseUri(u)}");
 /****************************** PLUGINS INI **********************************/
-s.doPlugins=s_doPlugins;
+
 /****************************** MODULES *****************************/
 
 /***** Media Module v 1.8 ****/
@@ -773,7 +748,7 @@ DIL?(this.dil=c,e.partner=this.dil.api.getPartner()):(g="dilInstance is not a va
 "//stags.peer39.net/"+this.aid+"/trg_"+this.aid+".js","string"===typeof c&&c.length&&(a.src+="?"+c));return a},submit:function(){try{return""!==this.errorMessage?this.errorMessage:this.constructSignals()}catch(a){return this.handle(a,"DIL.modules.Peer39.submit() caught error with message ",this.dil)}}};
 
 /*
- Start ActivityMap Module version: 1.8.0
+ Start ActivityMap Module
 
  The following module enables ActivityMap tracking in Adobe Analytics. ActivityMap
  allows you to view data overlays on your links and content to understand how

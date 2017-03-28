@@ -1,1 +1,0 @@
-rootKey = sessionID+aplicationFlowName (max20)

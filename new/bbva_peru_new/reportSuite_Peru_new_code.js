@@ -1,3 +1,5 @@
+//console.log("ANALYTICS CARGADO");
+
 //Inicialización del objeto s
 Object.defineProperty(window,'s', {
     enumerable:true,
@@ -25,7 +27,7 @@ s.visitor = Visitor.getInstance("FB99EDA0570E88407F000101@AdobeOrg",{
 /************************** CONFIG SECTION **************************/
 if(_satellite.readCookie("sessionID") === undefined || _satellite.readCookie("sessionID") == "" || _satellite.readCookie("sessionID").length == 0)
   _satellite.track('cookie sessionID');
-_satellite.getVar("setSerializacion");
+_satellite.getVar("setSerializacion");_satellite.getVar("setFunctions");
 /* You may add or alter any code config here. */
 s.debugTracking=false;
 
@@ -68,21 +70,11 @@ s.eventList = "event3,event1,event2"; //Abandon,Success,Error
 /* uncomment below to use doPlugins */
 s.usePlugins=true
 function s_doPlugins(s) {
-    // use implementation plug-ins that are defined below
-    // in this section. For example, if you copied the append
-    // list plug-in code below, you could call:
-    // s.events=s.apl(s.events,"event1",",",1);
-    // s.setupFormAnalysis();
-    // s.eVar99 = s.getLoadTime("browserapi","event220","event221");
-    // The getLoadTime plugin will use the browser api method.
-    // eVar99 will be set to the browser and version
-    // event220 will be set to the seconds it took to load the page
-    // event221 will be set to the number of pages loaded
     s.prop22 = s_getLoadTime();
     //s.eVar24 = s.getDaysSinceLastVisit("s_lv");
-    s.eVar25 =  s.getNewRepeat(30, "s_nr");
+    s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
-    s.eVar34 =  s.getVisitNum();
+    s.eVar34 =  "+1";
 
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
@@ -91,9 +83,10 @@ function s_doPlugins(s) {
         s.prop19 = ppvArray[2] //contains the percent of the previous page viewed on its initial load
         s.prop20 = ppvArray[3] //contains the highest number of vertical pixels viewed of the previous page
     }
-    if(mboxCurrent != undefined && s.visitor != undefined && s.visitor._supplementalDataIDCurrent == "" && s.visitor._supplementalDataIDLast != ""){
+    /*if(mboxCurrent != undefined && s.visitor != undefined && s.visitor._supplementalDataIDCurrent == "" && s.visitor._supplementalDataIDLast != ""){
         s.visitor._supplementalDataIDCurrent = s.visitor._supplementalDataIDLast;
-    }
+    }*/
+  //console.log("ANALYTICS CARGADO FIN");
 }
 s.doPlugins=s_doPlugins;
 s.loadModule("Media");
@@ -265,7 +258,7 @@ s.Media.onLoad = function() {
 /**********************MEDIA CONFIG END*********************/
 /**********************FUNCIONES INI********************/
 //Elimina los acentos y pasa a minusculas
-var formatearTexto=function(){for(var r="ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",a="AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",o={},t=0,e=r.length;t<e;t++)o[r.charAt(t)]=a.charAt(t);return function(r){r=r.toLowerCase(r);for(var a=[],t=0,e=r.length;t<e;t++){var n=r.charAt(t);o.hasOwnProperty(r.charAt(t))?a.push(o[n]):a.push(n)}return a.join("")}}();
+//var formatearTexto=function(){for(var r="ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",a="AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",o={},t=0,e=r.length;t<e;t++)o[r.charAt(t)]=a.charAt(t);return function(r){r=r.toLowerCase(r);for(var a=[],t=0,e=r.length;t<e;t++){var n=r.charAt(t);o.hasOwnProperty(r.charAt(t))?a.push(o[n]):a.push(n)}return a.join("")}}();
 
 /**********************FUNCIONES FIN********************/
 
