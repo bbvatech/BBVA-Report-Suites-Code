@@ -1,4 +1,3 @@
-
 // EVENTOS APP ON CLICK START
 /**
  * Estructura para manejar los eventos "App On Click Start" en la SPA de Argentina Privada.
