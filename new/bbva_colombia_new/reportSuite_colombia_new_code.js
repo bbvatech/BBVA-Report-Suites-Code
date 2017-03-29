@@ -536,7 +536,43 @@ s.split=new Function("l","d",""
 /*
  * Plugin: getPercentPageViewed 2.0 rc.0.01 Félix G.
  */
-s.handlePPVevents=function(){if(s_c_il){for(var e=0,n=s_c_il.length;e<n;e++)if("undefined"!=typeof s_c_il[e]&&s_c_il[e]._c&&"s_c"==s_c_il[e]._c){var t=s_c_il[e];break}if(t&&t.getPPVid){var d=Math.max(Math.max(null!=t.d.body?t.d.body.scrollHeight:0,t.d.documentElement.scrollHeight),Math.max(null!=t.d.body?t.d.body.offsetHeight:0,t.d.documentElement.offsetHeight),Math.max(null!=t.d.body?t.d.body.clientHeight:0,t.d.documentElement.clientHeight)),i=window.innerHeight||(t.d.documentElement.clientHeight||null!=t.d.body?t.d.body.clientHeight:0),l=window.pageYOffset||window.document.documentElement.scrollTop||window.document.body.scrollTop,a=l+i,o=Math.min(Math.round(a/d*100),100),c="";!t.c_r("tp")||decodeURIComponent(t.c_r("s_ppv").split(",")[0])!=t.getPPVid||"1"==t.ppvChange&&t.c_r("tp")&&d!=t.c_r("tp")?(t.c_w("tp",d),t.c_w("s_ppv","")):c=t.c_r("s_ppv");var s=c&&c.indexOf(",")>-1?c.split(",",4):[],h=s.length>0?s[0]:escape(t.getPPVid),p=s.length>1?parseInt(s[1]):0,r=s.length>2?parseInt(s[2]):o,P=s.length>3?parseInt(s[3]):0,v=o>0?h+","+(o>p?o:p)+","+r+","+(a>P?a:P):"";t.c_w("s_ppv",v)}}},s.getPercentPageViewed=function(e,n){var t=this,d=!t.getPPVid;if(e=e?e:t.pageName?t.pageName:document.location.href,t.ppvChange=n?n:"1","undefined"!=typeof t.linkType&&"0"!=t.linkType&&""!=t.linkType&&"e"!=t.linkType)return"";var i=t.c_r("s_ppv"),l=i.indexOf(",")>-1?i.split(",",4):[];if(l&&l.length<4){for(var a=3;a>0;a--)l[a]=a<l.length?l[a-1]:"";l[0]=""}return l&&(l[0]=unescape(l[0])),t.getPPVid&&t.getPPVid==e||(t.getPPVid=e,t.c_w("s_ppv",escape(t.getPPVid)),t.handlePPVevents()),d&&(window.addEventListener?(window.addEventListener("load",t.handlePPVevents,!1),window.addEventListener("click",t.handlePPVevents,!1),window.addEventListener("scroll",t.handlePPVevents,!1),window.addEventListener("resize",t.handlePPVevents,!1)):window.attachEvent&&(window.attachEvent("onload",t.handlePPVevents),window.attachEvent("onclick",t.handlePPVevents),window.attachEvent("onscroll",t.handlePPVevents),window.attachEvent("onresize",t.handlePPVevents))),"-"!=e?l:l[1]};
+s.handlePPVevents = function() {
+    if (s_c_il) {
+        for (var e = 0, n = s_c_il.length; e < n; e++)
+            if ("undefined" != typeof s_c_il[e] && s_c_il[e]._c && "s_c" == s_c_il[e]._c) {
+                var t = s_c_il[e];
+                break
+            }
+        if (t && t.getPPVid) {
+            var d = Math.max(Math.max(null != t.d.body ? t.d.body.scrollHeight : 0, t.d.documentElement.scrollHeight), Math.max(null != t.d.body ? t.d.body.offsetHeight : 0, t.d.documentElement.offsetHeight), Math.max(null != t.d.body ? t.d.body.clientHeight : 0, t.d.documentElement.clientHeight)),
+                i = window.innerHeight || (t.d.documentElement.clientHeight || null != t.d.body ? t.d.body.clientHeight : 0),
+                l = window.pageYOffset || window.document.documentElement.scrollTop || window.document.body != null ? window.document.body.scrollTop : 0,
+                a = l + i,
+                o = Math.min(Math.round(a / d * 100), 100),
+                c = "";
+            !t.c_r("tp") || decodeURIComponent(t.c_r("s_ppv").split(",")[0]) != t.getPPVid || "1" == t.ppvChange && t.c_r("tp") && d != t.c_r("tp") ? (t.c_w("tp", d), t.c_w("s_ppv", "")) : c = t.c_r("s_ppv");
+            var s = c && c.indexOf(",") > -1 ? c.split(",", 4) : [],
+                h = s.length > 0 ? s[0] : escape(t.getPPVid),
+                p = s.length > 1 ? parseInt(s[1]) : 0,
+                r = s.length > 2 ? parseInt(s[2]) : o,
+                P = s.length > 3 ? parseInt(s[3]) : 0,
+                v = o > 0 ? h + "," + (o > p ? o : p) + "," + r + "," + (a > P ? a : P) : "";
+            t.c_w("s_ppv", v)
+        }
+    }
+}
+s.getPercentPageViewed = function(e, n) {
+    var t = this,
+        d = !t.getPPVid;
+    if (e = e ? e : t.pageName ? t.pageName : document.location.href, t.ppvChange = n ? n : "1", "undefined" != typeof t.linkType && "0" != t.linkType && "" != t.linkType && "e" != t.linkType) return "";
+    var i = t.c_r("s_ppv"),
+        l = i.indexOf(",") > -1 ? i.split(",", 4) : [];
+    if (l && l.length < 4) {
+        for (var a = 3; a > 0; a--) l[a] = a < l.length ? l[a - 1] : "";
+        l[0] = ""
+    }
+    return l && (l[0] = unescape(l[0])), t.getPPVid && t.getPPVid == e || (t.getPPVid = e, t.c_w("s_ppv", escape(t.getPPVid)), t.handlePPVevents()), d && (window.addEventListener ? (window.addEventListener("load", t.handlePPVevents, !1), window.addEventListener("click", t.handlePPVevents, !1), window.addEventListener("scroll", t.handlePPVevents, !1), window.addEventListener("resize", t.handlePPVevents, !1)) : window.attachEvent && (window.attachEvent("onload", t.handlePPVevents), window.attachEvent("onclick", t.handlePPVevents), window.attachEvent("onscroll", t.handlePPVevents), window.attachEvent("onresize", t.handlePPVevents))), "-" != e ? l : l[1]
+}
 
 /*
  * Plugin: getTimeParting 3.4

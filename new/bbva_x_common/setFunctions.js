@@ -122,7 +122,7 @@ window.AppFlowSelectionList1 = function(dD) {
  */
 window.variablesHuellaTMS = function(dD) {
     try {
-        s.pageName = formatearTexto(dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName);
+        s.pageName = (dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName != ":") ? formatearTexto(dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName):"";
         s.channel = formatearTexto(dD.page.pageInfo.pageSegment);
         s.server = dD.page.pageInfo.server;
         s.campaign = window.s.Util.getQueryParam("cid");
@@ -133,12 +133,13 @@ window.variablesHuellaTMS = function(dD) {
         s.eVar13 = _satellite.getVar("urlFull");
         s.eVar14 = dD.page.pageInfo.pageIntent.length == 0 ? "informacion" : dD.page.pageInfo.pageIntent;
         s.eVar15 = "" + dD.page.pageInfo.channel + ":" + dD.page.pageInfo.sysEnv + ":" + dD.pageInstanceID + ":" + ((navigator.platform.indexOf("iPhone") > -1 || navigator.platform.indexOf("iPad") > -1 || navigator.platform.indexOf("iPod") > -1) ? "ios" : navigator.appVersion.indexOf("Android") > -1 ? "android" : "web");
+        s.eVar15 = s.eVar15.search(":::") >-1 ?"":s.eVar15;
         s.eVar16 = dD.page.pageInfo.area;
         s.eVar17 = dD.page.pageInfo.language;
         s.eVar25 = window.s.getNewRepeat(730, "s_nr");
         s.eVar26 = dD.page.pageInfo.geoRegion;
         s.eVar29 = dD.page.pageInfo.bussinessUnit;
-        s.eVar31 = _satellite.getVar("siteName");//"BBVA Frances";
+        s.eVar31 = _satellite.getVar("siteName"); //"BBVA Frances";
         s.eVar34 = "+1";
         s.eVar37 = dD.user.profileID;
         s.eVar38 = dD.user.segment.global;

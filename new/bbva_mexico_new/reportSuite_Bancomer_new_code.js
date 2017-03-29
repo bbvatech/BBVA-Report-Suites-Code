@@ -355,17 +355,17 @@ s.getNewRepeat = function(d, cn) {
   d = d ? d : 30;
   cn = cn ? cn : 's_nr';
   e.setTime(ct + d * 24 * 60 * 60 * 1000);
-  cval = _satellite.readCookie(cn);
+  cval = window.s.c_r(cn);
   if (cval == undefined || cval.length == 0) {
-      _satellite.setCookie(cn, ct + '-New', e);
+      window.s.c_w(cn, ct + '-New', e);
       return 'New';
   }
   sval = cval.split('-');
   if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
-      _satellite.setCookie(cn, ct + '-New', e);
+      window.s.c_w(cn, ct + '-New', e);
       return 'New';
   } else {
-      _satellite.setCookie(cn, ct + '-Repeat', e);
+      window.s.c_w(cn, ct + '-Repeat', e);
       return 'Repeat';
   }
 }
@@ -416,44 +416,73 @@ window.getTimeToComplete = function(v, cn, e) {
         d = new Date,
         x = d,
         k;
-    if (true) {
-        e = e ? e : 0;
+    if (!s.ttcr) { e = e ? e : 0;
         if (v == 'start' || v == 'stop') s.ttcr = 1;
         x.setTime(x.getTime() + e * 86400000);
-        if (v == 'start') {
-            _satellite.setCookie(cn, d.getTime(), e ? x : 0);
-            return '';
-        }
-        if (v == 'stop') {
-            k = _satellite.readCookie(cn);
-            if (!_satellite.setCookie(cn, '', d) && !k) return '';
+        if (v == 'start') { window.s.c_w(cn, d.getTime(), e ? x : 0);
+            return ''; }
+        if (v == 'stop') { k = window.s.c_r(cn);
+            if (!window.s.c_w(cn, '', d) || !k) return '';
             v = (d.getTime() - k) / 1000;
             var td = 86400,
                 th = 3600,
                 tm = 60,
                 r = 5,
                 u, un;
-            if (v > td) {
-                u = td;
-                un = 'days';
-            } else if (v > th) {
-                u = th;
-                un = 'hours';
-            } else if (v > tm) {
-                r = 2;
+            if (v > td) { u = td;
+                un = 'days'; } else if (v > th) { u = th;
+                un = 'hours'; } else if (v > tm) { r = 2;
                 u = tm;
-                un = 'minutes';
-            } else {
-                r = .2;
+                un = 'minutes'; } else { r = .2;
                 u = 1;
-                un = 'seconds';
-            }
+                un = 'seconds'; }
             v = v * r / u;
-            return (Math.round(v) / r) + ' ' + un;
-        }
-    }
+            return (Math.round(v) / r) + ' ' + un; } }
     return '';
 }
+// window.getTimeToComplete = function(v, cn, e) {
+//     var s = this,
+//         d = new Date,
+//         x = d,º
+//         k;
+//     if (true) {
+//         e = e ? e : 0;
+//         if (v == 'start' || v == 'stop') s.ttcr = 1;
+//         x.setTime(x.getTime() + e * 86400000);
+//         if (v == 'start') {
+//             window.s.cookieWrite(cn, d.getTime(), e ? x : 0);
+//             return '';
+//         }
+//         if (v == 'stop') {
+//             k = window.TMS_getCookie(cn);
+//             if (!TMS_setCookie(cn, '', d) && !k) return '';
+//             v = (d.getTime() - k) / 1000;
+//             var td = 86400,
+//                 th = 3600,
+//                 tm = 60,
+//                 r = 5,
+//                 u, un;
+//             if (v > td) {
+//                 u = td;
+//                 un = 'days';
+//             } else if (v > th) {
+//                 u = th;
+//                 un = 'hours';
+//             } else if (v > tm) {
+//                 r = 2;
+//                 u = tm;
+//                 un = 'minutes';
+//             } else {
+//                 r = .2;
+//                 u = 1;
+//                 un = 'seconds';
+//             }
+//             v = v * r / u;
+//             return (Math.round(v) / r) + ' ' + un;
+//         }
+//     }
+//     return '';
+// }
 
 /*
 * Plugin Utility: apl (Append to List) v2.5  - Uses s.inList Plugin Utility
