@@ -34,6 +34,7 @@ window.tms_O = {
         "enlaceexterno": "enlaceexterno",
         "interno": "interno",
         "enlacedescaga": "enlacedescaga",
+        "enlacedescarga": "enlacedescarga",
         "internalcampaignclick": "internalcampaignclick",
         "enviobuscador": "enviobuscador"
     },
@@ -92,7 +93,7 @@ window.tms_O = {
                 }
             }
             if (tms_O.nombre == "") {
-                window.localStorage.getItem("sdsat_debug") == "true" ? console.log("fired TMS: El evento no está registrado") : "";
+                window.localStorage.getItem("sdsat_debug") == "true" ? console.log("fired TMS: El evento no está registrado - " + evento) : "";
             }
         } catch (err) {
             window.localStorage.getItem("sdsat_debug") == "true" ? console.log("fired " + tms_O.fnLaunch + " error: setTipoEvento() - " + err.stack) : "";
@@ -108,7 +109,7 @@ window.tms_O = {
         try {
             var appFN = ((dD.application.application.name.length == 0 || dD.application.application.type.length == 0) ? "" : dD.application.application.type + ":" + dD.application.application.name);
             if (appFN.length > 0) {
-                var appID = "" + applicationIDs[appFN] + _satellite.readCookie("sessionID");
+                var appID = "" + applicationIDs[appFN] + window.s.c_r("sessionID");
                 return appID;
             }
         } catch (err) {
@@ -127,7 +128,7 @@ window.tms_O = {
                 var products = dD.product.primaryCategory;
                 products += dD.product.productSubtype.length > 0 ? ":" + dD.product.productSubtype : ":";
                 products += dD.product.productName.length > 0 ? ":" + dD.product.productName : ":";
-                return (productIDs[products] + "" + _satellite.readCookie("sessionID"));
+                return (productIDs[products] + "" + window.s.c_r("sessionID"));
             }
         } catch (err) {
             window.localStorage.getItem("sdsat_debug") == "true" ? console.log("fired " + tms_O.fnLaunch + " error: serializacion_product() - " + err.stack) : "";
@@ -154,6 +155,8 @@ window.tms_funnel = function(evento, aux, qV) {
         //Establecemos las variables generales de huella Avanzada. Posteriormente se irán añadiendo más según
         //el tipo de evento que se lance.
         variablesHuellaTMS(dD);
+        _satellite.notify("APP STARTED: CHANNEL -> " + s.channel);
+        _satellite.notify("APP STARTED: LINKTRACKVARS -> " + s.linkTrackVars);
         //Vemos si el evento tiene que lanzar la huella o por el contrario es un evento asincrono registrado
         tms_O.setTipoEvento(evento);
         //Añadimos los datos a la huella si son necesarios
@@ -235,10 +238,10 @@ window.tms_funnel = function(evento, aux, qV) {
                 //Funciones necesarias
                 s.events = "";
                 s.eVar50 = window.getTimeToComplete('stop', 'afct', 0);
-                if (_satellite.readCookie('sttc') != undefined && _satellite.readCookie('sttc').length > 0) {
-                    var cookieSttc = _satellite.readCookie('sttc');
+                if (window.s.c_r('sttc') != undefined && window.s.c_r('sttc').length > 0) {
+                    var cookieSttc = window.s.c_r('sttc');
                     s.eVar51 = window.getTimeToComplete('stop', 'sttc', 0);
-                    _satellite.setCookie('sttc', cookieSttc, 0);
+                    window.TMS_CookieWrite('sttc', cookieSttc, 0);
                 }
                 if (s.events == undefined) {
                     s.events = "";
@@ -352,6 +355,8 @@ window.tms_funnel = function(evento, aux, qV) {
                 s.linkTrackVars += ",events,products,list1";
                 s.list1 = AppFlowSelectionList1(dD);
                 setLinkTrackVars();
+                _satellite.notify("APP STARTED: CHANNEL -> " + s.channel);
+                _satellite.notify("APP STARTED: LINKTRACKVARS -> " + s.linkTrackVars);
                 s.tl(this, "o", s.eVar45);
                 window.localStorage.getItem("sdsat_debug") == "true" ? console.log("SATELLITE: fired %c" + tms_O.fnLaunch + ": App Started - " + s.eVar46, "color:blue;background:#ccc;", dD) : "";
                 s.clearVars();
@@ -411,10 +416,11 @@ window.tms_track = function(evento, aux, qV) {
                     //Falta por definir de donde se cogen los datos de url y name
                     // case "enlaceExterno":
                     //     s.events = s.linkTrackEvents = "event6";
-                    //     s.eVar6 = "enlace externo;" + auxDD.page.pageActivity.download.name + ";" + auxDD.page.download.pageName;
+                    //     s.eVar6 = "externo;" + auxDD.page.pageActivity.download.name + ";" + auxDD.page.download.pageName;
                     //     nombreEnlace = auxDD.page.pageActivity.extLink.url;
                     //     break;
                 case tms_O.clickEsp.enlacedescaga:
+                case tms_O.clickEsp.enlacedescarga:
                     s.events = s.linkTrackEvents = "event6";
                     //La estructura envidada en este evento es del tipo:
                     //var pageActivity = {

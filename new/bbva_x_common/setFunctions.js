@@ -1,4 +1,33 @@
 /**
+ * Pasamos de las funciones de dtm para las cookies y creamos la nuestra para registrar bien el dominio.
+ * el punto clave es el uso del cookie domain para establecer todas las cookies
+ * @param {string} nombre nombre de la cookie
+ * @param {string} dato     dato a guardar
+ * @param {string} duracion cuanto va a durar la cookie en el navegador del usuario. Sin duración dura la sesion
+ *
+ * Datos para traducción si existen errores.
+ * a = s
+ * b = dato
+ * c = nombre
+ * f = dominio
+ * d = duracion
+ * g = year
+ */
+window.TMS_CookieWrite = function(nombre, dato, duracion) {
+    var dominio = window.s.cookieDomain,
+        cooLifeTime = window.s.cookieLifetime,
+        year;
+    dato = "" + dato;
+    cooLifeTime = cooLifeTime ? ("" + cooLifeTime).toUpperCase() : "";
+    duracion && "SESSION" != cooLifeTime && "NONE" != cooLifeTime && ((year = "" != dato ? parseInt(cooLifeTime ? cooLifeTime : 0) : -60) ? (duracion = new Date,
+        duracion.setTime(duracion.getTime() + 1E3 * year)) : 1 == duracion && (duracion = new Date,
+        year = duracion.getYear(),
+        duracion.setYear(year + 5 + (1900 > year ? 1900 : 0))));
+    return nombre && "NONE" != cooLifeTime ? (window.s.d.cookie = window.s.escape(nombre) + "=" + window.s.escape("" != dato ? dato : "[[B]]") + "; path=/;" + (duracion && "SESSION" != cooLifeTime ? " expires=" + duracion.toGMTString() + ";" : "") + (dominio ? " domain=" + dominio + ";" : ""),
+        window.s.cookieRead(nombre) == dato) : 0
+}
+
+/**
  * Clona un objeto (deep-copy)
  * @param  {Any}    from: el objeto a clonar
  * @param  {Object} dest: (opcional) objeto a extender
@@ -139,7 +168,7 @@ window.variablesHuellaTMS = function(dD) {
         s.eVar25 = window.s.getNewRepeat(730, "s_nr");
         s.eVar26 = dD.page.pageInfo.geoRegion;
         s.eVar29 = dD.page.pageInfo.bussinessUnit;
-        s.eVar31 = _satellite.getVar("siteName"); //"BBVA Frances";
+        s.eVar31 = _satellite.getVar("siteName");//"BBVA Frances";
         s.eVar34 = "+1";
         s.eVar37 = dD.user.profileID;
         s.eVar38 = dD.user.segment.global;
@@ -172,17 +201,17 @@ window.variablesHuellaTMS = function(dD) {
             s.prop20 = ppvArray[3] //contains the highest number of vertical pixels viewed of the previous page
         }
         //Comprobamos que existen los prevPage
-        if (_satellite.getVar("pageNamePrevPage") == undefined) {
-            _satellite.setVar("pageNamePrevPage", _satellite.readCookie("pageNamePrevPage"));
-            _satellite.setVar("pageURLPrevPage", _satellite.readCookie("pageURLPrevPage"));
-            _satellite.setVar('pageIntentPrevPage', _satellite.readCookie("pageIntentPrevPage"));
-            _satellite.setVar('siteSectionPrevPage', _satellite.readCookie("siteSectionPrevPage"));
+        if (_satellite.getVar("pageNamePrevPage1") == undefined) {
+            _satellite.setVar("pageNamePrevPage1", window.s.c_r("pageNamePrevPage"));
+            _satellite.setVar("pageURLPrevPage1", window.s.c_r("pageURLPrevPage"));
+            _satellite.setVar('pageIntentPrevPage1', window.s.c_r("pageIntentPrevPage"));
+            _satellite.setVar('siteSectionPrevPage1', window.s.c_r("siteSectionPrevPage"));
         }
-        s.prop21 = _satellite.getVar("pageNamePrevPage");
+        s.prop21 = _satellite.getVar("pageNamePrevPage1");
         s.prop22 = window.s_getLoadTime();
-        s.prop23 = _satellite.getVar("pageURLPrevPage");
-        s.prop24 = _satellite.getVar("pageIntentPrevPage");
-        s.prop25 = _satellite.getVar("siteSectionPrevPage");
+        s.prop23 = _satellite.getVar("pageURLPrevPage1");
+        s.prop24 = _satellite.getVar("pageIntentPrevPage1");
+        s.prop25 = _satellite.getVar("siteSectionPrevPage1");
         s.prop26 = s.eVar26;
         s.prop31 = s.eVar31;
         s.prop67 = dD.page.pageInfo.version + ":" + dD.versionDL + ":" + _satellite.appVersion + ":" + s.version;
@@ -204,6 +233,9 @@ window.variablesHuellaTMS = function(dD) {
  * props = 29,31,17,67
  */
 window.setLinkTrackVars = function() {
+    if(s.linkTrackVars.indexOf("channel") == -1){
+        s.linkTrackVars += ",channel";
+    }
     for (var i = 1; i < 100; i++) {
         if (s["eVar" + i] != undefined && s["eVar" + i] != "") {
             if (25 == i || 29 == i || 31 == i || 17 == i || 48 == i) {} else {
@@ -278,10 +310,13 @@ window.lanzaHuella = function(dD) {
     try {
         //Establecemos los datos necesarios de las páginas previas para incluirlas en todos
         //los eventos -> s.t(), s.tl()
-        _satellite.setVar("pageNamePrevPage", _satellite.readCookie("pageNamePrevPage"));
-        _satellite.setVar("pageURLPrevPage", _satellite.readCookie("pageURLPrevPage"));
-        _satellite.setVar('pageIntentPrevPage', _satellite.readCookie("pageIntentPrevPage"));
-        _satellite.setVar('siteSectionPrevPage', _satellite.readCookie("siteSectionPrevPage"));
+        //
+        //Establecidos previamente en lanzar huella
+        //
+        // _satellite.setVar("pageNamePrevPage", window.s.c_r("pageNamePrevPage"));
+        // _satellite.setVar("pageURLPrevPage", window.s.c_r("pageURLPrevPage"));
+        // _satellite.setVar('pageIntentPrevPage', window.s.c_r("pageIntentPrevPage"));
+        // _satellite.setVar('siteSectionPrevPage', window.s.c_r("siteSectionPrevPage"));
 
         //Establecemos los datos iniciales
         var cadena = "";
@@ -363,10 +398,10 @@ window.lanzaHuella = function(dD) {
             _satellite.setVar(appStarted, undefined);
         }
         //Actualizamos las cookies pre para la siguiente huella.
-        _satellite.setCookie('pageNamePrevPage', dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName, 0);
-        _satellite.setCookie('pageURLPrevPage', window.location.href.substr(window.location.href.indexOf("//") + 2), 0);
-        _satellite.setCookie('pageIntentPrevPage', dD.page.pageInfo.pageIntent.length == 0 ? "informacion" : dD.page.pageInfo.pageIntent, 0);
-        _satellite.setCookie('siteSectionPrevPage', dD.page.pageInfo.level1, 0);
+        window.TMS_CookieWrite('pageNamePrevPage', dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName, 0);
+        window.TMS_CookieWrite('pageURLPrevPage', window.location.href.substr(window.location.href.indexOf("//") + 2), 0);
+        window.TMS_CookieWrite('pageIntentPrevPage', dD.page.pageInfo.pageIntent.length == 0 ? "informacion" : dD.page.pageInfo.pageIntent, 0);
+        window.TMS_CookieWrite('siteSectionPrevPage', dD.page.pageInfo.level1, 0);
 
         //Scroll
         window.lanzaScroll = function() {
