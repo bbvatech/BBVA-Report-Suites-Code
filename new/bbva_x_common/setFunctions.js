@@ -151,7 +151,10 @@ window.AppFlowSelectionList1 = function(dD) {
  */
 window.variablesHuellaTMS = function(dD) {
     try {
-        s.pageName = (dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName != ":") ? formatearTexto(dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName):"";
+        // Vaciamos la variables
+        s.linkTrackVars = "";
+        //Establecemos la variables
+        s.pageName = (dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName != ":") ? formatearTexto(dD.page.pageInfo.sysEnv + ":" + dD.page.pageInfo.pageName) : "";
         s.channel = formatearTexto(dD.page.pageInfo.pageSegment);
         s.server = dD.page.pageInfo.server;
         s.campaign = window.s.Util.getQueryParam("cid");
@@ -162,14 +165,17 @@ window.variablesHuellaTMS = function(dD) {
         s.eVar13 = _satellite.getVar("urlFull");
         s.eVar14 = dD.page.pageInfo.pageIntent.length == 0 ? "informacion" : dD.page.pageInfo.pageIntent;
         s.eVar15 = "" + dD.page.pageInfo.channel + ":" + dD.page.pageInfo.sysEnv + ":" + dD.pageInstanceID + ":" + ((navigator.platform.indexOf("iPhone") > -1 || navigator.platform.indexOf("iPad") > -1 || navigator.platform.indexOf("iPod") > -1) ? "ios" : navigator.appVersion.indexOf("Android") > -1 ? "android" : "web");
-        s.eVar15 = s.eVar15.search(":::") >-1 ?"":s.eVar15;
+        s.eVar15 = s.eVar15.search(":::") > -1 ? "" : s.eVar15;
         s.eVar16 = dD.page.pageInfo.area;
         s.eVar17 = dD.page.pageInfo.language;
         s.eVar25 = window.s.getNewRepeat(730, "s_nr");
         s.eVar26 = dD.page.pageInfo.geoRegion;
         s.eVar29 = dD.page.pageInfo.bussinessUnit;
-        s.eVar31 = _satellite.getVar("siteName");//"BBVA Frances";
-        s.eVar34 = "+1";
+        s.eVar31 = _satellite.getVar("siteName");
+        if (tms_O.tipo != undefined && tms_O.tipo != "" &&
+            (tms_O.tipo == tms_O.clase.compuesto || tms_O.tipo == tms_O.clase.huella)) {
+            s.eVar34 = "+1";
+        }
         s.eVar37 = dD.user.profileID;
         s.eVar38 = dD.user.segment.global;
         s.eVar39 = dD.user.age;
@@ -202,10 +208,10 @@ window.variablesHuellaTMS = function(dD) {
         }
         //Comprobamos que existen los prevPage
         if (_satellite.getVar("pageNamePrevPage1") == undefined) {
-            _satellite.setVar("pageNamePrevPage1", window.s.c_r("pageNamePrevPage"));
-            _satellite.setVar("pageURLPrevPage1", window.s.c_r("pageURLPrevPage"));
-            _satellite.setVar('pageIntentPrevPage1', window.s.c_r("pageIntentPrevPage"));
-            _satellite.setVar('siteSectionPrevPage1', window.s.c_r("siteSectionPrevPage"));
+            _satellite.setVar("pageNamePrevPage1", window.s.cookieRead("pageNamePrevPage"));
+            _satellite.setVar("pageURLPrevPage1", window.s.cookieRead("pageURLPrevPage"));
+            _satellite.setVar('pageIntentPrevPage1', window.s.cookieRead("pageIntentPrevPage"));
+            _satellite.setVar('siteSectionPrevPage1', window.s.cookieRead("siteSectionPrevPage"));
         }
         s.prop21 = _satellite.getVar("pageNamePrevPage1");
         s.prop22 = window.s_getLoadTime();
@@ -233,7 +239,7 @@ window.variablesHuellaTMS = function(dD) {
  * props = 29,31,17,67
  */
 window.setLinkTrackVars = function() {
-    if(s.linkTrackVars.indexOf("channel") == -1){
+    if (s.linkTrackVars.indexOf("channel") == -1) {
         s.linkTrackVars += ",channel";
     }
     for (var i = 1; i < 100; i++) {
@@ -313,10 +319,10 @@ window.lanzaHuella = function(dD) {
         //
         //Establecidos previamente en lanzar huella
         //
-        // _satellite.setVar("pageNamePrevPage", window.s.c_r("pageNamePrevPage"));
-        // _satellite.setVar("pageURLPrevPage", window.s.c_r("pageURLPrevPage"));
-        // _satellite.setVar('pageIntentPrevPage', window.s.c_r("pageIntentPrevPage"));
-        // _satellite.setVar('siteSectionPrevPage', window.s.c_r("siteSectionPrevPage"));
+        // _satellite.setVar("pageNamePrevPage", window.s.cookieRead("pageNamePrevPage"));
+        // _satellite.setVar("pageURLPrevPage", window.s.cookieRead("pageURLPrevPage"));
+        // _satellite.setVar('pageIntentPrevPage', window.s.cookieRead("pageIntentPrevPage"));
+        // _satellite.setVar('siteSectionPrevPage', window.s.cookieRead("siteSectionPrevPage"));
 
         //Establecemos los datos iniciales
         var cadena = "";
@@ -346,6 +352,7 @@ window.lanzaHuella = function(dD) {
         //====================================================================
         //====================================================================
         window.localStorage.getItem("sdsat_debug") == "true" ? console.log("SATELLITE: fired %c" + tms_O.fnLaunch + ": " + tms_O.nombre.toUpperCase() + (s.eVar46 != undefined && s.eVar46 != "" ? " - " + s.eVar46 : ""), "color:blue;background:#ccc;", dD) : "";
+        tms_O.tipo = "";
         s.clearVars();
         onYouTubeIframeAPIReadyDTM();
         var intCampS = dD.internalCampaign.attributes;

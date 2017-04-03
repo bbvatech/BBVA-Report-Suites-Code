@@ -154,12 +154,10 @@ window.tms_funnel = function(evento, aux, qV) {
         var dD = window.fnClone(aux);
         //Establecemos las variables generales de huella Avanzada. Posteriormente se irán añadiendo más según
         //el tipo de evento que se lance.
-        variablesHuellaTMS(dD);
-        _satellite.notify("APP STARTED: CHANNEL -> " + s.channel);
-        _satellite.notify("APP STARTED: LINKTRACKVARS -> " + s.linkTrackVars);
-        //Vemos si el evento tiene que lanzar la huella o por el contrario es un evento asincrono registrado
         tms_O.setTipoEvento(evento);
         //Añadimos los datos a la huella si son necesarios
+        variablesHuellaTMS(dD);
+        //Vemos si el evento tiene que lanzar la huella o por el contrario es un evento asincrono registrado
         if ((qV || evento == tms_O.compuesto.qualifiedVisit) && tms_O.clase.compuesto == tms_O.tipo) {
             if (dD.product.primaryCategory.length > 0) {
                 s.products = ";" + dD.product.primaryCategory + ":" + dD.product.productSubtype + ":" + dD.product.productName + ";;;";
@@ -336,7 +334,7 @@ window.tms_funnel = function(evento, aux, qV) {
                     updateDigitalDataPrevPage(dD);
                 }
                 window.localStorage.getItem("sdsat_debug") == "true" ? console.log("SATELLITE: fired %c" + tms_O.fnLaunch + ": App On Click Start - " + s.eVar46, "color:blue;background:#ccc;", dD) : "";
-
+                tms_O.tipo = "";
                 s.clearVars();
             } else if (evento == tms_O.clickFun["app started"] &&
                 _satellite.getVar('appStarted' + tms_O.serializacion_application(dD)) == undefined) {
@@ -359,6 +357,7 @@ window.tms_funnel = function(evento, aux, qV) {
                 _satellite.notify("APP STARTED: LINKTRACKVARS -> " + s.linkTrackVars);
                 s.tl(this, "o", s.eVar45);
                 window.localStorage.getItem("sdsat_debug") == "true" ? console.log("SATELLITE: fired %c" + tms_O.fnLaunch + ": App Started - " + s.eVar46, "color:blue;background:#ccc;", dD) : "";
+                tms_O.tipo = "";
                 s.clearVars();
                 _satellite.setVar('appStarted' + tms_O.serializacion_application(dD), true)
             }
@@ -384,11 +383,11 @@ window.tms_track = function(evento, aux, qV) {
         //nos aseguramos que trabajamos con una copia.
         evento = evento.toLowerCase();
         var dD = window.fnClone(aux);
+        //Vemos si el evento tiene que lanzar la huella o por el contrario es un evento asincrono registrado
+        tms_O.setTipoEvento(evento);
         //Establecemos las variables generales de huella Avanzada. Posteriormente se irán añadiendo más según
         //el tipo de evento que se lance.
         variablesHuellaTMS(dD);
-        //Vemos si el evento tiene que lanzar la huella o por el contrario es un evento asincrono registrado
-        tms_O.setTipoEvento(evento);
         if (tms_O.clase.huella == tms_O.tipo) {
             if (dD.product.primaryCategory.length > 0) {
                 s.products = ";" + dD.product.primaryCategory + ":" + dD.product.productSubtype + ":" + dD.product.productName + ";;;";
@@ -469,6 +468,7 @@ window.tms_track = function(evento, aux, qV) {
 
             //Eliminamos la variable clonada
             dD = undefined;
+            tms_O.tipo = "";
             s.clearVars();
         }
     } catch (err) {

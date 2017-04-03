@@ -46,7 +46,7 @@ s.trackInlineStats=true;
 //s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx" //optional: add your download file types here if not setting in DTM interface
 //s.linkInternalFilters="javascript:,stg-www.optum.com,www.optum.com" //optional: add your internal domains here if not setting in DTM interface
 s.linkLeaveQueryString=false;
-s.linkTrackVars="eVar24,prop22,eVar25,eVar34,prop18,prop19,prop20";
+s.linkTrackVars="eVar25,prop18,prop19,prop20,prop22";
 s.linkTrackEvents="";
 s.events = "";
 
@@ -74,8 +74,6 @@ function s_doPlugins(s) {
     //s.eVar24 = s.getDaysSinceLastVisit("s_lv");
     s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
-    s.eVar34 =  "+1";
-
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
         //s.prop21 = ppvArray[0] //contains the previous page name

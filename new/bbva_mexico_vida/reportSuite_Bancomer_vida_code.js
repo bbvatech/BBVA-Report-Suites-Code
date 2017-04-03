@@ -66,7 +66,6 @@ s.doPlugins = function(s) {
   s.campaign = s.Util.getQueryParam("cid");
   s.prop22 = s_getLoadTime();
     s.eVar25 = s.getNewRepeat(30, "s_nr");
-    s.eVar34 = "+1";
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
         s.prop18 = ppvArray[1] //contains the highest percent viewed of the previous page

@@ -49,7 +49,7 @@ s.trackInlineStats=true;
 //s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx" //optional: add your download file types here if not setting in DTM interface
 //s.linkInternalFilters="javascript:,stg-www.optum.com,www.optum.com" //optional: add your internal domains here if not setting in DTM interface
 s.linkLeaveQueryString=false;
-s.linkTrackVars="eVar24,prop22,eVar25,eVar34,prop18,prop19,prop20";
+s.linkTrackVars="eVar25,prop18,prop19,prop20,prop22";
 s.linkTrackEvents="";
 s.events = "";
 
@@ -77,8 +77,6 @@ function s_doPlugins(s) {
     //s.eVar24 = s.getDaysSinceLastVisit("s_lv"); //Se elimina por decisión de negocio
     s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
-    s.eVar34 =  "+1";
-
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
         //s.prop21 = ppvArray[0] //contains the previous page name
@@ -357,15 +355,15 @@ s.getNewRepeat = function(d, cn) {
   e.setTime(ct + d * 24 * 60 * 60 * 1000);
   cval = window.s.c_r(cn);
   if (cval == undefined || cval.length == 0) {
-      window.s.c_w(cn, ct + '-New', e);
+      window.TMS_CookieWrite(cn, ct + '-New', e);
       return 'New';
   }
   sval = cval.split('-');
   if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
-      window.s.c_w(cn, ct + '-New', e);
+      window.TMS_CookieWrite(cn, ct + '-New', e);
       return 'New';
   } else {
-      window.s.c_w(cn, ct + '-Repeat', e);
+      window.TMS_CookieWrite(cn, ct + '-Repeat', e);
       return 'Repeat';
   }
 }
@@ -419,10 +417,10 @@ window.getTimeToComplete = function(v, cn, e) {
     if (!s.ttcr) { e = e ? e : 0;
         if (v == 'start' || v == 'stop') s.ttcr = 1;
         x.setTime(x.getTime() + e * 86400000);
-        if (v == 'start') { window.s.c_w(cn, d.getTime(), e ? x : 0);
+        if (v == 'start') { window.TMS_CookieWrite(cn, d.getTime(), e ? x : 0);
             return ''; }
         if (v == 'stop') { k = window.s.c_r(cn);
-            if (!window.s.c_w(cn, '', d) || !k) return '';
+            if (!window.TMS_CookieWrite(cn, '', d) || !k) return '';
             v = (d.getTime() - k) / 1000;
             var td = 86400,
                 th = 3600,

@@ -1,53 +1,89 @@
-//s.clearVars();
-s.events ="";
-s.eVar50 = window.getTimeToComplete('stop', 'afct', 0);
-s.linkTrackVars = "eVar50,";
-if (window.s.cookieRead('sttc')!= undefined && window.s.cookieRead('sttc').length > 0) {
-    var cookieSttc = window.s.cookieRead ('sttc');
-    s.eVar51 = window.getTimeToComplete('stop', 'sttc', 0);
-    s.linkTrackVars += "eVar51,";
-    window.s.cookieWrite('sttc',cookieSttc,0);
+//Incluir en el evento s.tl() esta llamada para tener todas las
+//variables de la huella en los eventos s.tl()
+//      _satellite.getVar("setVariablesHuella");
+//Variables a establecer en la huella
+s.pageName = _satellite.getVar("sysEnv")+":"+_satellite.getVar("pageName");
+s.channel = _satellite.getVar("pageChannel");
+s.server = _satellite.getVar("server");
+s.campaign = window.s.Util.getQueryParam("cid");
+s.hier1 = _satellite.getVar("userAgent");
+s.eVar1 = _satellite.getVar("sysEnv")+":"+_satellite.getVar("pageName");
+s.eVar4 = _satellite.getVar("Date Format");
+s.eVar12 = _satellite.getVar("userState");
+s.eVar13 = _satellite.getVar("urlFull");
+s.eVar14 = _satellite.getVar("pageIntent");
+s.eVar15 = _satellite.getVar("siteEnvironment");
+s.eVar16 = _satellite.getVar("area");
+s.eVar17 = _satellite.getVar("language");
+s.eVar25 = window.s.getNewRepeat(730, "s_nr");
+s.eVar26 = _satellite.getVar("geoRegion");
+s.eVar29 = _satellite.getVar("bussinessUnit");
+s.eVar31 = _satellite.getVar("siteName");
+s.eVar34 = "+1";
+s.eVar37 = _satellite.getVar("customerID");
+s.eVar38 = _satellite.getVar("segmentGlobal");
+s.eVar39 = _satellite.getVar("age");
+s.eVar40 = _satellite.getVar("gender");
+s.eVar41 = _satellite.getVar("userCountryState");
+s.eVar47 = _satellite.getVar("typology");
+s.prop1 = _satellite.getVar("level1");
+s.prop2 = _satellite.getVar("level2");
+s.prop3 = _satellite.getVar("level3");
+s.prop4 = _satellite.getVar("level4");
+s.prop5 = _satellite.getVar("level5");
+s.prop6 = _satellite.getVar("level6");
+s.prop7 = _satellite.getVar("level7");
+s.prop8 = _satellite.getVar("level8");
+s.prop9 = _satellite.getVar("level9");
+s.prop10 = _satellite.getVar("level10");
+s.prop12 = s.eVar12;
+s.prop13 = s.eVar13;
+s.prop14 = s.eVar14;
+s.prop15 = s.eVar15;
+s.prop16 = s.eVar16;
+s.prop17 = s.eVar17;
+var ppvArray = window.s.getPercentPageViewed(_satellite.getVar('pageName'));
+if (ppvArray != undefined) {
+    //s.prop21 = ppvArray[0] //contains the previous page name
+    s.prop18 = ppvArray[1] //contains the highest percent viewed of the previous page
+    s.prop19 = ppvArray[2] //contains the percent of the previous page viewed on its initial load
+    s.prop20 = ppvArray[3] //contains the highest number of vertical pixels viewed of the previous page
 }
-if (s.events == undefined)
-    s.events = "";
-var appState = _satellite.getVar('applicationState');
-if (appState == "contratado" || appState == "aprobado") {
-    s.linkTrackEvents += "event57:" + _satellite.getVar("serializacion_application") + ",";
-    s.events += "event57:" + _satellite.getVar("serializacion_application") + ",";
-    if (appState == "contratado") {
-        s.linkTrackEvents += "event58:" + _satellite.getVar("serializacion_application") + ",";
-        s.events += "event58:" + _satellite.getVar("serializacion_application") + ",";
-    }
+//Comprobamos que existen los prevPage
+if (_satellite.getVar("pageNamePrevPage1") == undefined) {
+    _satellite.setVar("pageNamePrevPage1", window.s.cookieWrite("pageNamePrevPage"));
+    _satellite.setVar("pageURLPrevPage1", window.s.cookieWrite("pageURLPrevPage"));
+    _satellite.setVar('pageIntentPrevPage1', window.s.cookieWrite("pageIntentPrevPage"));
+    _satellite.setVar('siteSectionPrevPage1', window.s.cookieWrite("siteSectionPrevPage"));
 }
-if (appState == "rechazado") {
-    s.linkTrackEvents += "event56:" + _satellite.getVar("serializacion_application") + ",";
-    s.events += "event56:" + _satellite.getVar("serializacion_application") + ",";
+s.prop21 = _satellite.getVar("pageNamePrevPage1");
+s.prop22 = window.s_getLoadTime();
+s.prop23 = _satellite.getVar("pageURLPrevPage1");
+s.prop24 = _satellite.getVar("pageIntentPrevPage1");
+s.prop25 = _satellite.getVar("siteSectionPrevPage1");
+s.prop26 = s.eVar26;
+s.prop31 = s.eVar31;
+s.prop67 = _satellite.getVar("contentVersion");
+s.prop68 = s.visitor.getMarketingCloudVisitorID();
+
+for (var i = 1; i < 100; i++) {
+  if (s["eVar"+i] != undefined && s["eVar"+i] !=""){s.linkTrackVars += ",eVar"+i;}
+  if (s["prop"+i] != undefined && s["prop"+i] !=""){s.linkTrackVars += ",prop"+i;}
 }
-if (appState == "en revision") {
-    s.linkTrackEvents += "event151:" + _satellite.getVar("serializacion_application") + ",";
-    s.events += "event151:" + _satellite.getVar("serializacion_application") + ",";
+s.linkTrackVars += ",hier1";
+
+
+//Establecemos los datos iniciales
+var cadena = "";
+var props = digitalData.page.pageInfo.pageName.split(':');
+var level = 0;
+if (digitalData.page.pageInfo.pageName.indexOf('home') > -1) {
+  s.prop1 = "home";
+} else {
+  for (var i = 1; i + 1 < props.length; i++) {
+    s["prop" + i] = cadena == "" ? digitalData.page.pageInfo['level' + i] : cadena + ":" + digitalData.page.pageInfo['level' + i];
+    cadena = s["prop" + i];
+  }
 }
 
-s.linkTrackVars += "events,products,eVar33,eVar45,prop45,eVar46,prop46,eVar47,eVar48,eVar49,eVar53,eVar54,eVar56,list1";
-s.linkTrackEvents += "event76,event55:" + _satellite.getVar("serializacion_application");
-s.events += "event76,event55:" + _satellite.getVar("serializacion_application");
-s.eVar45 = s.prop45 = "" + _satellite.getVar("applicationName") + ":app completed:" + _satellite.getVar('step');
-s.eVar46 = s.prop46 = _satellite.getVar('applicationFlowName');
-s.eVar48 = _satellite.getVar('currency');
-s.eVar49 = _satellite.getVar('fulfilmentModel');
-s.eVar53 = _satellite.getVar('segmentProfile');
-s.eVar54 = _satellite.getVar('operationNumber');
-s.eVar56 = _satellite.getVar('programTypeHired');
-s.products = ";" + _satellite.getVar("productCategory") + ":" + _satellite.getVar("productSubtype") + ":" + _satellite.getVar("productName") + ";;;";
-if (_satellite.getVar('amount') != "") {
-    s.products += "event91=" + _satellite.getVar('amount');
-  	s.events += ",event91";
-    if (_satellite.getVar('paymentAmount') != "")
-        s.products += "|";
-}
-if (_satellite.getVar('paymentAmount') != "") {
-    s.products += "event92=" + _satellite.getVar('paymentAmount');
-  	s.events += ",event92";
-}
-s.products += ";";
-s.list1 = _satellite.getVar("applicationFlowSelections (list1)");
+//_satellite.notify("fired setVariablesHuella: END");

@@ -73,7 +73,7 @@ function s_doPlugins(s) {
     //s.eVar24 = s.getDaysSinceLastVisit("s_lv"); //Se elimina por decisión de negocio
     s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
-    s.eVar34 =  "+1";
+    //s.eVar34 =  "+1";
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
         //s.prop21 = ppvArray[0] //contains the previous page name

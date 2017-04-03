@@ -42,8 +42,7 @@ s.trackInlineStats=true;
 //s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx" //optional: add your download file types here if not setting in DTM interface
 //s.linkInternalFilters="javascript:,stg-www.optum.com,www.optum.com" //optional: add your internal domains here if not setting in DTM interface
 s.linkLeaveQueryString=false;
-s.linkTrackVars="eVar24,prop22,eVar25,eVar34,prop18,prop19,prop20";
-s.linkTrackEvents="";
+s.linkTrackVars="eVar25,prop18,prop19,prop20,prop22";s.linkTrackEvents="";
 s.events = "";
 
 //Europe Daylight Savings Dates for timeparting plugin
@@ -67,11 +66,8 @@ s.eventList = "event3,event1,event2"; //Abandon,Success,Error
  s.usePlugins=true;
 function s_doPlugins(s) {
     s.prop22 = s_getLoadTime();
-    //s.eVar24 = s.getDaysSinceLastVisit("s_lv"); //Se elimina por decisión de negocio
     s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
-    s.eVar34 =  "+1";
-
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
         //s.prop21 = ppvArray[0] //contains the previous page name
@@ -103,7 +99,7 @@ function getNumVideos(event) {
 
 function onYouTubeIframeAPIReadyDTM() {
     // var num_videos = 0;
-    console.log('*** iFrame embed onYouTubeIframeAPIReadyDTM');
+    _satellite.notify('Fired*** iFrame embed onYouTubeIframeAPIReadyDTM');
     var videoFrames = $('iframe[id*="player"');
     for (var i = videoFrames.length - 1; i >= 0; i--) {
         player[i] = new YT.Player(videoFrames[i].id, {
@@ -118,7 +114,7 @@ function onYouTubeIframeAPIReadyDTM() {
 // 4. The API will call this function when the video player is ready.
 function onPlayerReadyDTM(event) {
     var num = getNumVideos(event);
-    console.log('*** iFrame embed onPlayerReadyDTM ', player[num]);
+    _satellite.notify('Fired*** iFrame embed onPlayerReadyDTM ', player[num]);
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -129,25 +125,25 @@ var done = false;
 function onPlayerStateChangeDTM(event) {
     var idActive = event.target.a.id;
     var num = getNumVideos(event);
-    console.log('*** iFrame embed onPlayerStateChangeDTM ' + event.data);//+ ' --- YT Player state ' + YT.PlayerState.PLAYING, player[num].getCurrentTime(), player[num]);
+    // _satellite.notify('Fired*** iFrame embed onPlayerStateChangeDTM ' + event.data);//+ ' --- YT Player state ' + YT.PlayerState.PLAYING, player[num].getCurrentTime(), player[num]);
 
-    video_name = s.eVar9 = _satellite.getVar('nameOfVideoDisplayed');
     s.eVar1 = _satellite.getVar('pageName');
     //video_length = player[num].getDuration();
     //var obj=$(event.target).attr('a');
     var srcVideo = event.target.a.src;
-    if(srcVideo.indexOf("youtube.com") != -1){
-    srcVideo = srcVideo.substring(srcVideo.indexOf("/embed/")+7);
-    srcVideo = srcVideo.substring(0, srcVideo.indexOf("?"));
+    if (srcVideo.indexOf("youtube.com") != -1) {
+        srcVideo = srcVideo.substring(srcVideo.indexOf("/embed/") + 7);
+        srcVideo = srcVideo.substring(0, srcVideo.indexOf("?"));
     }
     digitalData.page.pageActivity.nameOfVideoDisplayed = srcVideo;
-    //console.log('video visualizado');
+    video_name = s.eVar9 = _satellite.getVar('nameOfVideoDisplayed');
+    //_satellite.notify('Firedvideo visualizado');
     // event.data == YT.PlayerState.ENDED;
 
     // if(event.data === YT.PlayerState.PLAYING && (event.data === 1 || event.data < 0)){
     if ((event.data === 1 || event.data < 0) && YT.PlayerState.PLAYING === 1) {
         //*-* PLAY
-        console.log("*-* Player is on play mode " + event.data + ' ' + player[num].getCurrentTime(), s);
+        // _satellite.notify("Fired*-* Player is on play mode " + event.data + ' ' + player[num].getCurrentTime(), s);
         if (player[num].getCurrentTime() === 0) {
             s.Media.open(video_name, video_length, 'Youtube Object Embed');
             s.event160 = player[num].getCurrentTime();
@@ -158,17 +154,17 @@ function onPlayerStateChangeDTM(event) {
         }
     } else if (event.data === 2) {
         //*-* PAUSE --- CAN USE THIS FOR ENDING TOO =-- check on time -5 sec!!
-        console.log("*-* Player is on pause mode " + event.data + ' ' + player[num].getCurrentTime());
+        // _satellite.notify("Fired*-* Player is on pause mode " + event.data + ' ' + player[num].getCurrentTime());
         s.event160 = player[num].getCurrentTime();
         s.Media.stop(video_name, player[num].getCurrentTime()); //this will cause the monitor to have media.event='STOP'
     } else if (event.data === 3) {
         //*-* SKIPPING
-        console.log("*-* Player is on skipping mode " + event.data);
+        // _satellite.notify("Fired*-* Player is on skipping mode " + event.data);
         s.event160 = player[num].getCurrentTime();
         s.Media.stop(video_name, player[num].getCurrentTime()); //this will cause the monitor to have media.event='STOP'
     } else if (event.data === 0) {
         //*-* Completed
-        console.log("*-* Player has been completed " + event.data);
+        // _satellite.notify("Fired*-* Player has been completed " + event.data);
         s.event160 = player[num].getCurrentTime();
         s.Media.stop(video_name, player[num].getCurrentTime());
         s.Media.close(video_name);
@@ -177,7 +173,7 @@ function onPlayerStateChangeDTM(event) {
 
 /*********Media Module Calls**************/
 s.Media.onLoad = function() {
-  console.log('**** MEDIA module loaded');
+  _satellite.notify('Fired**** MEDIA module loaded');
   /*Configure Media Module Functions */
   if (document.getElementsByTagName('video').length > 0) {
       s.Media.autoTrack = true;
@@ -189,7 +185,7 @@ s.Media.onLoad = function() {
   }
   s.Media.trackWhilePlaying = true;
   // s.Media.trackSecond=0; // set to 30 if milestone in seconds
-  console.log('**** MEDIA module loaded1');
+  _satellite.notify('Fired**** MEDIA module loaded1');
   s.Media.completeByCloseOffset = true; //*** Enabled if you want to allow the video to be completed a few seconds before the actual end of the video
   s.Media.completeCloseOffsetThreshold = 10;
   //**NOTE: Add additional data which will be pushed either in the plugin or on the page
@@ -206,7 +202,7 @@ s.Media.onLoad = function() {
   s.Media.trackMilestones = "1,25,50,75";
   s.Media.segmentByMilestones = false;
   s.Media.trackUsingContextData = true;
-  console.log('**** MEDIA module loaded2');
+  _satellite.notify('Fired**** MEDIA module loaded2');
   s.Media.contextDataMapping = {
       "a.media.name": "eVar9",
       "a.media.segment": "",
@@ -222,15 +218,16 @@ s.Media.onLoad = function() {
           75: "event158"
       }
   }
-  // console.log('**** MEDIA module loaded3');
+
+  // _satellite.notify('Fired**** MEDIA module loaded3');
   /*
    * can use the below IF wanna pass additional data --- Need to update s.Media.trackVars --- BUT we could potential set it on above var and avoid using the below
    */
   s.Media.monitor = function(s, media) {
-      console.log('**** MEDIA module loaded4');
-      // console.log(media);
+      _satellite.notify('Fired**** MEDIA module loaded4');
+      // _satellite.notify(media);
       //https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/video/video_mediamonitor.html
-      // console.log('in the video monitor, can help add additional evar, prop or events', media);
+      // _satellite.notify('Firedin the video monitor, can help add additional evar, prop or events', media);
       if (media.event == "OPEN") {
           s.contextData = s.Media.contextDataMapping
           s.Media.track(media.name);
