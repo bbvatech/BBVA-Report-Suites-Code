@@ -166,7 +166,6 @@ window.tms_funnel = function(evento, aux, qV) {
             s.events = "event60,event39:" + tms_O.serializacion_product(dD);
             s.linkTrackEvents = "event60,event39";
             window.localStorage.getItem("sdsat_debug") == "true" ? console.log("SATELLITE fired %c" + tms_O.fnLaunch + ": Qualified Visit vars - " + s.products, "color:blue;background:#e5e5e5;", dD) : "";
-
         }
         //Eventos de carga de página en funnel
         if (tms_O.clase.compuesto == tms_O.tipo) {
@@ -392,6 +391,12 @@ window.tms_track = function(evento, aux, qV) {
             if (dD.product.primaryCategory.length > 0) {
                 s.products = ";" + dD.product.primaryCategory + ":" + dD.product.productSubtype + ":" + dD.product.productName + ";;;";
                 s.linkTrackVars += ",products";
+            }
+            if (qV) {
+                s.linkTrackVars += "events,products";
+                s.events = "event60,event39:" + tms_O.serializacion_product(dD);
+                s.linkTrackEvents = "event60,event39";
+                window.localStorage.getItem("sdsat_debug") == "true" ? console.log("SATELLITE fired %c" + tms_O.fnLaunch + ": Qualified Visit vars - " + s.products, "color:blue;background:#e5e5e5;", dD) : "";
             }
             window.lanzaHuella(dD);
         } else if (tms_O.clase.clickEsp == tms_O.tipo) {

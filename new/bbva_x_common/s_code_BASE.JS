@@ -1,38 +1,43 @@
+/* Analytics code version: AppMeasurement JS 1.6.4, with standard 's' object.
+LAST UPDATED: 06-23-2016 */
 Object.defineProperty(window,'s', {
     enumerable:true,
     configurable:false,
     writable: false,
     value: new AppMeasurement()
 })
+//var s = new AppMeasurement();
 s.abort = true; //Impide que se lance una huella en la carga de la libreria
 
-if (_satellite && _satellite.settings.isStaging == true)
-    r_suite = 'bbvaarg.global.2016.dev'; //dev suite
+if(_satellite &&_satellite.settings.isStaging==true)
+    r_suite='bbvaban.global.2016.dev'; //dev suite 
 else
-  r_suite='bbvaban.global.2016'; //production suite
+    r_suite='bbvaban.global.2016'; //production suite 
 
 //var s=s_gi(r_suite); //comment out line if setting report suite in DTM interface
 //s.account=r_suite;  //comment out line if setting report suite in DTM interface
-var s_account = s.account;
+var s_account=s.account
 
 /******** VISITOR ID SERVICE Request, assumes visitor ID service  is configured in DTM ********/
-s.visitor = Visitor.getInstance("029481D7572B23287F000101@AdobeOrg",{
-    trackingServer: "bbvaar.d3.sc.omtrdc.net"
+s.visitor=Visitor.getInstance("968E179156DF0B907F000101@AdobeOrg",{
+    trackingServer: "bbvabancomer.d3.sc.omtrdc.net"
 });
 
 /************************** CONFIG SECTION **************************/
 if(_satellite.readCookie("sessionID") === undefined || _satellite.readCookie("sessionID") == "" || _satellite.readCookie("sessionID").length == 0)
   _satellite.track('cookie sessionID');
 _satellite.getVar("setSerializacion");
-_satellite.getVar("setDataFunnel");
 _satellite.getVar("setFunctions");
+
 
 /* You may add or alter any code config here. */
 s.debugTracking=false;
 //Configuración de cookies
 s.cookieDomainPeriods = "2";
-if (window.location.hostname.indexOf(".com.ar") > 0) {
-  s.cookieDomainPeriods = "3";
+if (window.location.hostname.indexOf(".com.mx") > 0) {
+  s.visitor.cookieDomain = "bbvanet.com.mex"
+  s.cookieDomain = "bbvanet.com.mex"
+  s.cookieDomainPeriods = "5";
 }
 
 /* Link Tracking Config */
@@ -66,24 +71,24 @@ s.varUsed = "eVar2";
 s.eventList = "event3,event1,event2"; //Abandon,Success,Error
 
 /* uncomment below to use doPlugins */
- s.usePlugins=true;
+s.usePlugins=true;
 function s_doPlugins(s) {
-
     s.prop22 = s_getLoadTime();
     //s.eVar24 = s.getDaysSinceLastVisit("s_lv"); //Se elimina por decisión de negocio
     s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
-    //s.eVar34 =  "+1";
+    s.eVar34 =  "+1";
+
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
     if (ppvArray != undefined) {
         //s.prop21 = ppvArray[0] //contains the previous page name
         s.prop18 = ppvArray[1] //contains the highest percent viewed of the previous page
         s.prop19 = ppvArray[2] //contains the percent of the previous page viewed on its initial load
         s.prop20 = ppvArray[3] //contains the highest number of vertical pixels viewed of the previous page
-     }
-}
+    }
 
-s.doPlugins=s_doPlugins;
+}
+s.doPlugins = s_doPlugins;
 s.loadModule("Media");
 /**********************MEDIA CONFIG INI*********************/
 var video_obj = null;
@@ -106,7 +111,7 @@ function getNumVideos(event) {
 
 function onYouTubeIframeAPIReadyDTM() {
     // var num_videos = 0;
-    console.log('*** iFrame embed onYouTubeIframeAPIReadyDTM');
+    // console.log('*** iFrame embed onYouTubeIframeAPIReadyDTM');
     var videoFrames = $('iframe[id*="player"');
     for (var i = videoFrames.length - 1; i >= 0; i--) {
         player[i] = new YT.Player(videoFrames[i].id, {
@@ -121,7 +126,7 @@ function onYouTubeIframeAPIReadyDTM() {
 // 4. The API will call this function when the video player is ready.
 function onPlayerReadyDTM(event) {
     var num = getNumVideos(event);
-    console.log('*** iFrame embed onPlayerReadyDTM ', player[num]);
+    // console.log('*** iFrame embed onPlayerReadyDTM ', player[num]);
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -132,7 +137,7 @@ var done = false;
 function onPlayerStateChangeDTM(event) {
     var idActive = event.target.a.id;
     var num = getNumVideos(event);
-    console.log('*** iFrame embed onPlayerStateChangeDTM ' + event.data);//+ ' --- YT Player state ' + YT.PlayerState.PLAYING, player[num].getCurrentTime(), player[num]);
+    // console.log('*** iFrame embed onPlayerStateChangeDTM ' + event.data);//+ ' --- YT Player state ' + YT.PlayerState.PLAYING, player[num].getCurrentTime(), player[num]);
 
     video_name = s.eVar9 = _satellite.getVar('nameOfVideoDisplayed');
     s.eVar1 = _satellite.getVar('pageName');
@@ -150,7 +155,7 @@ function onPlayerStateChangeDTM(event) {
     // if(event.data === YT.PlayerState.PLAYING && (event.data === 1 || event.data < 0)){
     if ((event.data === 1 || event.data < 0) && YT.PlayerState.PLAYING === 1) {
         //*-* PLAY
-        console.log("*-* Player is on play mode " + event.data + ' ' + player[num].getCurrentTime(), s);
+        // console.log("*-* Player is on play mode " + event.data + ' ' + player[num].getCurrentTime(), s);
         if (player[num].getCurrentTime() === 0) {
             s.Media.open(video_name, video_length, 'Youtube Object Embed');
             s.event160 = player[num].getCurrentTime();
@@ -161,28 +166,28 @@ function onPlayerStateChangeDTM(event) {
         }
     } else if (event.data === 2) {
         //*-* PAUSE --- CAN USE THIS FOR ENDING TOO =-- check on time -5 sec!!
-        console.log("*-* Player is on pause mode " + event.data + ' ' + player[num].getCurrentTime());
+        // console.log("*-* Player is on pause mode " + event.data + ' ' + player[num].getCurrentTime());
         s.event160 = player[num].getCurrentTime();
         s.Media.stop(video_name, player[num].getCurrentTime()); //this will cause the monitor to have media.event='STOP'
     } else if (event.data === 3) {
         //*-* SKIPPING
-        console.log("*-* Player is on skipping mode " + event.data);
+        // console.log("*-* Player is on skipping mode " + event.data);
         s.event160 = player[num].getCurrentTime();
         s.Media.stop(video_name, player[num].getCurrentTime()); //this will cause the monitor to have media.event='STOP'
     } else if (event.data === 0) {
         //*-* Completed
-        console.log("*-* Player has been completed " + event.data);
+        // console.log("*-* Player has been completed " + event.data);
         s.event160 = player[num].getCurrentTime();
         s.Media.stop(video_name, player[num].getCurrentTime());
         s.Media.close(video_name);
     }
 }
 
-/*********Media Module Calls**************/
+// /*********Media Module Calls**************/
 s.Media.onLoad = function() {
-  console.log('**** MEDIA module loaded');
+  // console.log('**** MEDIA module loaded');
   /*Configure Media Module Functions */
-  if (document.getElementsByTagName('video').length > 0) {
+  if (document.getElementsByTagName('video').length > 0 ){//&& document.URL.search(/.*\/bancadigital\.bancomer\.com\/wallet/gi) == -1) {
       s.Media.autoTrack = true;
       s.Media.playerName = "HTML 5 video";
       s.eVar9 = _satellite.getVar('nameOfVideoDisplayed');
@@ -192,7 +197,7 @@ s.Media.onLoad = function() {
   }
   s.Media.trackWhilePlaying = true;
   // s.Media.trackSecond=0; // set to 30 if milestone in seconds
-  console.log('**** MEDIA module loaded1');
+  // console.log('**** MEDIA module loaded1');
   s.Media.completeByCloseOffset = true; //*** Enabled if you want to allow the video to be completed a few seconds before the actual end of the video
   s.Media.completeCloseOffsetThreshold = 10;
   //**NOTE: Add additional data which will be pushed either in the plugin or on the page
@@ -209,7 +214,7 @@ s.Media.onLoad = function() {
   s.Media.trackMilestones = "1,25,50,75";
   s.Media.segmentByMilestones = false;
   s.Media.trackUsingContextData = true;
-  console.log('**** MEDIA module loaded2');
+  // console.log('**** MEDIA module loaded2');
   s.Media.contextDataMapping = {
       "a.media.name": "eVar9",
       "a.media.segment": "",
@@ -230,7 +235,7 @@ s.Media.onLoad = function() {
    * can use the below IF wanna pass additional data --- Need to update s.Media.trackVars --- BUT we could potential set it on above var and avoid using the below
    */
   s.Media.monitor = function(s, media) {
-      console.log('**** MEDIA module loaded4');
+      // console.log('**** MEDIA module loaded4');
       // console.log(media);
       //https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/video/video_mediamonitor.html
       // console.log('in the video monitor, can help add additional evar, prop or events', media);
@@ -248,6 +253,9 @@ s.Media.onLoad = function() {
 }
 
 /**********************MEDIA CONFIG END*********************/
+/**********************FUNCIONES INI********************/
+
+/**********************FUNCIONES FIN********************/
 
 /****************************** PLUGINS INI **********************************/
 
@@ -295,7 +303,7 @@ s.getLoadTime=new Function("opt","e1","e2",""
 +"e=true;return browserName+' '+majorVersion;");
 */
 
-//function s_getLoadTime(){if(!window.s_loadT){var b=new Date().getTime(),o=window.performance?performance.timing:0,a=o?o.requestStart:window.inHeadTS||0;s_loadT=a?Math.round((b-a)/100):''}return s_loadT}
+// function s_getLoadTime(){if(!window.s_loadT){var b=new Date().getTime(),o=window.performance?performance.timing:0,a=o?o.requestStart:window.inHeadTS||0;s_loadT=a?Math.round((b-a)/100):''}return s_loadT}
 function s_getLoadTime() {
     if (typeof(performance) !== 'undefined' && typeof(performance.timing) == 'object') {
         var timing = performance.timing;
@@ -316,7 +324,6 @@ function s_getLoadTime() {
     }
     return 'data not available';
 }
-
 /*
  * Plugin: getTrackingCode 2.0 (by Carlos Pliego)
  */
@@ -341,34 +348,49 @@ function getTrackingCode() {
  "=0){s.c_w(cn,ct+'-New',e);return'New';}sval=cval.split(cval,'-');if(ct" +
  "-sval[0]<30*60*1000&&sval[1]=='New'){s.c_w(cn,ct+'-New',e);return'N" +
  "ew';}else{s.c_w(cn,ct+'-Repeat',e);return'Repeat';}");*/
-window.s.getNewRepeat = function(d, cn) {
-    var s = this,
-        e = new Date(),
-        cval, sval, ct = e.getTime();
-    d = d ? d : 30;
-    cn = cn ? cn : 's_nr';
-    e.setTime(ct + d * 24 * 60 * 60 * 1000);
-    cval = _satellite.readCookie(cn);
-    if (cval == undefined || cval.length == 0) {
-        _satellite.setCookie(cn, ct + '-New', e);
-        return 'New';
-    }
-    sval = cval.split('-');
-    if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
-        _satellite.setCookie(cn, ct + '-New', e);
-        return 'New';
-    } else {
-        _satellite.setCookie(cn, ct + '-Repeat', e);
-        return 'Repeat';
-    }
+s.getNewRepeat = function(d, cn) {
+  var s = this,
+      e = new Date(),
+      cval, sval, ct = e.getTime();
+  d = d ? d : 30;
+  cn = cn ? cn : 's_nr';
+  e.setTime(ct + d * 24 * 60 * 60 * 1000);
+  cval = window.s.c_r(cn);
+  if (cval == undefined || cval.length == 0) {
+      window.s.c_w(cn, ct + '-New', e);
+      return 'New';
+  }
+  sval = cval.split('-');
+  if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
+      window.s.c_w(cn, ct + '-New', e);
+      return 'New';
+  } else {
+      window.s.c_w(cn, ct + '-Repeat', e);
+      return 'Repeat';
+  }
 }
 
 /*
 * Plugin: getVisitNum - version 3.0
 */
-s.getVisitNum=function(e,t,i){var n,s,m,r=this,u=new Date,T=u.getTime();if(e||(e="m"),"m"==e||"w"==e||"d"==e?(eo=r.endof(e),y=eo.getTime(),u.setTime(y)):(m=864e5*e,u.setTime(T+m)),t||(t="s_vnum"),i||(i="s_invisit"),n=r.c_r(t))var _,c=n.indexOf("&vn="),v=n.substring(c+4,n.length);return s=r.c_r(i),s?v?(u.setTime(T+18e5),r.c_w(i,"true",u),v):"unknown visit number":v?(v++,_=n.substring(0,c),u.setTime(_),r.c_w(t,_+"&vn="+v,u),u.setTime(T+18e5),r.c_w(i,"true",u),v):(r.c_w(t,u.getTime()+"&vn=1",u),u.setTime(T+18e5),r.c_w(i,"true",u),1)};
-s.dimo=function(m,y){var d=new Date(y,m+1,0);return d.getDate();}
-s.endof=function(e){var t=new Date;return t.setHours(0),t.setMinutes(0),t.setSeconds(0),"m"==e?d=s.dimo(t.getMonth(),t.getFullYear())-t.getDate()+1:"w"==e?d=7-t.getDay():d=1,t.setDate(t.getDate()+d),t};
+s.getVisitNum=new Function("tp","c","c2",""
++"var s=this,e=new Date,cval,cvisit,ct=e.getTime(),d;if(!tp){tp='m';}"
++"if(tp=='m'||tp=='w'||tp=='d'){eo=s.endof(tp),y=eo.getTime();e.setTi"
++"me(y);}else {d=tp*86400000;e.setTime(ct+d);}if(!c){c='s_vnum';}if(!"
++"c2){c2='s_invisit';}cval=s.c_r(c);if(cval){var i=cval.indexOf('&vn="
++"'),str=cval.substring(i+4,cval.length),k;}cvisit=s.c_r(c2);if(cvisi"
++"t){if(str){e.setTime(ct+1800000);s.c_w(c2,'true',e);return str;}els"
++"e {return 'unknown visit number';}}else {if(str){str++;k=cval.substri"
++"ng(0,i);e.setTime(k);s.c_w(c,k+'&vn='+str,e);e.setTime(ct+1800000);"
++"s.c_w(c2,'true',e);return str;}else {s.c_w(c,e.getTime()+'&vn=1',e)"
++";e.setTime(ct+1800000);s.c_w(c2,'true',e);return 1;}}");
+s.dimo=new Function("m","y",""
++"var d=new Date(y,m+1,0);return d.getDate();");
+s.endof=new Function("x",""
++"var t=new Date;t.setHours(0);t.setMinutes(0);t.setSeconds(0);if(x=="
++"'m'){d=s.dimo(t.getMonth(),t.getFullYear())-t.getDate()+1;}else if("
++"x=='w'){d=7-t.getDay();}else {d=1;}t.setDate(t.getDate()+d);return "
++"t;");
 
 /* 
  * Plugin: getQueryParam 2.3 (required for getTrackingCode())
@@ -394,44 +416,31 @@ window.getTimeToComplete = function(v, cn, e) {
         d = new Date,
         x = d,
         k;
-    if (true) {
-        e = e ? e : 0;
+    if (!s.ttcr) { e = e ? e : 0;
         if (v == 'start' || v == 'stop') s.ttcr = 1;
         x.setTime(x.getTime() + e * 86400000);
-        if (v == 'start') {
-            _satellite.setCookie(cn, d.getTime(), e ? x : 0);
-            return '';
-        }
-        if (v == 'stop') {
-            k = _satellite.readCookie(cn);
-            if (!_satellite.setCookie(cn, '', d) && !k) return '';
+        if (v == 'start') { window.s.c_w(cn, d.getTime(), e ? x : 0);
+            return ''; }
+        if (v == 'stop') { k = window.s.c_r(cn);
+            if (!window.s.c_w(cn, '', d) || !k) return '';
             v = (d.getTime() - k) / 1000;
             var td = 86400,
                 th = 3600,
                 tm = 60,
                 r = 5,
                 u, un;
-            if (v > td) {
-                u = td;
-                un = 'days';
-            } else if (v > th) {
-                u = th;
-                un = 'hours';
-            } else if (v > tm) {
-                r = 2;
+            if (v > td) { u = td;
+                un = 'days'; } else if (v > th) { u = th;
+                un = 'hours'; } else if (v > tm) { r = 2;
                 u = tm;
-                un = 'minutes';
-            } else {
-                r = .2;
+                un = 'minutes'; } else { r = .2;
                 u = 1;
-                un = 'seconds';
-            }
+                un = 'seconds'; }
             v = v * r / u;
-            return (Math.round(v) / r) + ' ' + un;
-        }
-    }
+            return (Math.round(v) / r) + ' ' + un; } }
     return '';
 }
+
 
 /*
 * Plugin Utility: apl (Append to List) v2.5  - Uses s.inList Plugin Utility
@@ -442,7 +451,9 @@ s.inList=function(l,v,d,u){if(typeof v!="string")return false;var s=this,ar=Arra
 /*
  * Utility Function: split v1.5 (JS 1.0 compatible)
  */
-s.split=function(n,r){for(var t,s=0,e=new Array;n;)t=n.indexOf(r),t=t>-1?t:n.length,e[s++]=n.substring(0,t),n=n.substring(t+r.length);return e};
+s.split=new Function("l","d",""
++"var i,x=0,a=new Array;while(l){i=l.indexOf(d);i=i>-1?i:l.length;a[x"
++"++]=l.substring(0,i);l=l.substring(i+d.length);}return a");
 
 /*
  * Plugin: Days since last Visit 1.1 - capture time from last visit
@@ -629,6 +640,83 @@ s.gtfs=new Function(""
 +"var w=window,l=w.location,d=document,u;if(!l.origin)l.origin=l.prot"
 +"ocol+'//'+l.hostname+(l.port?':'+l.port:'');u=l!=w.parent.location?"
 +"d.referrer:d.location;return{location:s.parseUri(u)}");
+
+/************************** ADSERV VARIABLES **************************/
+/* @TODO: Fill in these variables with the settings mapped in the
+ * ADSERV wizard and that match your desired preferences. 
+ * @TODO: Comments should be removed in a production deployment. */
+var adservConfig = {
+    tEvar: 'eVar82', // Transfer variable, typically the "View Through" eVar.
+    aID: '160911', // Advertiser ID
+    cID: '984460', // Conversion Tag ID
+    gID: 'EB_ACM:', // Genesis ID
+    requestURL: "http://bs.serving-sys.com/BurstingPipe/ActivityServer.bs?cn=as&vn=omn&activityID=[cID]&advID=[aID]&var=[VAR]&rnd=[RAND]", // the Sizmek request URL
+    maxDelay: "750", // The maximum time to wait for ADSERV servers to respond, in milliseconds.
+    visitCookie: "s_adserv", // The name of the visitor cookie to use to restrict ADSERV calls to once per visit.
+    clickThroughParam: "CID", // A query string paramter that will force the ADSERV call to occur.
+    searchCenterParam: undefined, // SearchCenter identifier.
+};
+/************************ END ADSERV Variables ************************/
+
+s.maxDelay = adservConfig.maxDelay;
+/*
+ * Partner Plugin: ADSERV Check 1.0 - Restrict ADSERV calls to once a visit, per report suite, per click
+ * through. Used in conjunction with genesis_event_config table. Deduplicates SCM hits.
+ */
+s.partnerADSERVCheck = new Function("cfg", "" + "var s=this,c=cfg.visitCookie,src=cfg.clickThroughParam,scp=cfg.searchCenterParam,tv=cfg.tEvar,dl=',',cr,nc,q,g,gs,i,j,k,fnd,v=1," + "t=new Date,cn=0,ca=new Array,aa=new Array,cs=new Array;t.setTime(t.getTime()+1800000);cr=s.c_r(c);if(cr){v=0;}ca=s.split(cr,dl);" + "if(s.un)aa=s.split(s.un,dl);else aa=s.split(s.account,dl);for(i=0;i<aa.length;i++){fnd = 0;for(j=0;j<ca.length;j++){if(aa[i] == ca[j]){fnd=1;}}if(!fnd){cs[cn]=aa[i];c" + "n++;}}if(cs.length){for(k=0;k<cs.length;k++){nc=(nc?nc+dl:'')+cs[k];}cr=(cr?cr+dl:'')+nc;v=1;}if(s.wd)q=s.wd.location.search.toLowerCase(" + ");else q=s.w.location.search.toLowerCase();q=s.repl(q,'?','&');g=q.indexOf('&'+src.toLowerCase()+'=');gs=(scp)?q.indexOf('&'+scp.toLowerCase()+'='):-1;if(g>-1){v=1;}else i" + "f(gs>-1){v=0;s.vpr(tv,'SearchCenter Visitors');}if(!s.c_w(c,cr,t)){s.c_w(c,cr,0);}if(!s.c_r(c)){v=0;}return v>=1;");
+
+/********************************************************************
+ *
+ * Supporting functions that may be shared between plug-ins
+ *
+ *******************************************************************/
+
+/*
+ * Utility Function: vpr - set the variable vs with value v
+ */
+s.vpr = new Function("vs", "v",
+    "if(typeof(v)!='undefined'){var s=this; eval('s.'+vs+'=\"'+v+'\"')}");
+
+/*
+ * Utility Function: split v1.5 - split a string (JS 1.0 compatible)
+ */
+s.split = new Function("l", "d", "" + "var i,x=0,a=new Array;while(l){i=l.indexOf(d);i=i>-1?i:l.length;a[x++]=l.substring(0,i);l=l.substring(i+d.length);}return a");
+
+/*
+ * Plugin Utility: Replace v1.0
+ */
+s.repl = new Function("x", "o", "n", "" + "var i=x.indexOf(o),l=n.length;while(x&&i>=0){x=x.substring(0,i)+n+x.substring(i+o.length);i=x.indexOf(o,i+l)}return x");
+
+s.loadModule("Integrate");
+s.Integrate.onLoad = function(s, m) {
+    var adservCheck = s.partnerADSERVCheck(adservConfig);
+    if (adservCheck) {
+        s.Integrate.add("Sizmek_ACM");
+        s.Integrate.Sizmek_ACM.tEvar = adservConfig.tEvar;
+        s.Integrate.Sizmek_ACM.aID = adservConfig.aID;
+        s.Integrate.Sizmek_ACM.cID = adservConfig.cID;
+        s.Integrate.Sizmek_ACM.gID = adservConfig.gID;
+        s.Integrate.Sizmek_ACM.tVar = adservConfig.tEvar;
+        s.Integrate.Sizmek_ACM.get(adservConfig.requestURL);
+
+        s.Integrate.Sizmek_ACM.setVars = function(s, p) {
+            var
+                at = p.lastImpTime,
+                a1 = p.lastImpSId,
+                a2 = p.lastImpPId,
+                a3 = p.lastImpId,
+                bt = p.lastClkTime,
+                b1 = p.lastClkSId,
+                b2 = p.lastClkPId,
+                b3 = p.lastClkId;
+
+            if (((at && a1 && a2 && a3) || (bt && b1 && b2 && b3)) && !p.errorCode) s[p.tVar] = adservConfig.gID + (at ? at : 0) + ":" + (a1 ? a1 : 0) + ":" + (a2 ? a2 : 0) + ":" + (a3 ? a3 : 0) + ":" + (bt ? bt : 0) + ":" + (b1 ? b1 : 0) + ":" + (b2 ? b2 : 0) + ":" + (b3 ? b3 : 0)
+        }
+    }
+}
+
+
+
 /****************************** PLUGINS INI **********************************/
 s.doPlugins=s_doPlugins;
 /****************************** MODULES *****************************/

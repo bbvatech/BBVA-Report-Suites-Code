@@ -164,7 +164,7 @@ window.variablesHuellaTMS = function(dD) {
         s.eVar12 = dD.user.userState;
         s.eVar13 = _satellite.getVar("urlFull");
         s.eVar14 = dD.page.pageInfo.pageIntent.length == 0 ? "informacion" : dD.page.pageInfo.pageIntent;
-        s.eVar15 = "" + dD.page.pageInfo.channel + ":" + dD.page.pageInfo.sysEnv + ":" + dD.pageInstanceID + ":" + ((navigator.platform.indexOf("iPhone") > -1 || navigator.platform.indexOf("iPad") > -1 || navigator.platform.indexOf("iPod") > -1) ? "ios" : navigator.appVersion.indexOf("Android") > -1 ? "android" : "web");
+        s.eVar15 = "" + dD.page.pageInfo.channel + ":" + dD.page.pageInfo.sysEnv + ":" + dD.pageInstanceID + ":" + "web";
         s.eVar15 = s.eVar15.search(":::") > -1 ? "" : s.eVar15;
         s.eVar16 = dD.page.pageInfo.area;
         s.eVar17 = dD.page.pageInfo.language;
@@ -183,16 +183,17 @@ window.variablesHuellaTMS = function(dD) {
         s.eVar41 = dD.user.country == "" ? "" : dD.user.state == "" ? dD.user.country : dD.user.country + ":" + dD.user.state;
         s.eVar47 = dD.application.typology;
         s.eVar57 = dD.application.process;
-        s.prop1 = dD.page.pageInfo.level1;
-        s.prop2 = dD.page.pageInfo.level2;
-        s.prop3 = dD.page.pageInfo.level3;
-        s.prop4 = dD.page.pageInfo.level4;
-        s.prop5 = dD.page.pageInfo.level5;
-        s.prop6 = dD.page.pageInfo.level6;
-        s.prop7 = dD.page.pageInfo.level7;
-        s.prop8 = dD.page.pageInfo.level8;
-        s.prop9 = dD.page.pageInfo.level9;
-        s.prop10 = dD.page.pageInfo.level10;
+        var cadena = "";
+        var props = dD.page.pageInfo.pageName.split(':');
+        var level = 0;
+        if (dD.page.pageInfo.pageName.indexOf('home') > -1) {
+            s.prop1 = "home";
+        } else {
+            for (var i = 1; i + 1 < props.length; i++) {
+                s["prop" + i] = cadena == "" ? dD.page.pageInfo['level' + i] : cadena + ":" + dD.page.pageInfo['level' + i];
+                cadena = s["prop" + i];
+            }
+        }
         s.prop12 = s.eVar12;
         s.prop13 = s.eVar13;
         s.prop14 = s.eVar14;
@@ -223,7 +224,6 @@ window.variablesHuellaTMS = function(dD) {
         s.prop67 = dD.page.pageInfo.version + ":" + dD.versionDL + ":" + _satellite.appVersion + ":" + s.version;
         s.prop68 = s.visitor.getMarketingCloudVisitorID();
         s.eVar99 = _satellite.getVar("ttMETA");
-        s.linkTrackVars += ",hier1";
     } catch (err) {
         window.localStorage.getItem("sdsat_debug") == "true" ? console.log("fired " + tms_O.fnLaunch + " error: variablesHuellaTMS() - " + err.stack) : "";
         s.eVar99 = "fired " + tms_O.fnLaunch + " error: tms_funnel() - " + err.stack;
@@ -258,12 +258,23 @@ window.setLinkTrackVars = function() {
     }
     if (s.products != undefined && s.products != "") {
         s.products = formatearTexto(s.products);
+        s.linkTrackVars += ",products";
     }
     if (s.list1 != undefined && s.list1 != "") {
         s.list1 = formatearTexto(s.list1);
+        s.linkTrackVars += ",list1";
     }
     if (s.list2 != undefined && s.list2 != "") {
         s.list2 = formatearTexto(s.list2);
+        s.linkTrackVars += ",list2";
+    }
+    if (s.hier1 != undefined && s.hier1 != "") {
+        s.hier1 = formatearTexto(s.hier1);
+        s.linkTrackVars += ",hier1";
+    }
+    if (s.events != undefined && s.hier1 != "") {
+        s.hier1 = formatearTexto(s.hier1);
+        s.linkTrackVars += ",events";
     }
 }
 
@@ -314,28 +325,6 @@ window.updateDigitalDataPrevPage = function(dD) {
  */
 window.lanzaHuella = function(dD) {
     try {
-        //Establecemos los datos necesarios de las páginas previas para incluirlas en todos
-        //los eventos -> s.t(), s.tl()
-        //
-        //Establecidos previamente en lanzar huella
-        //
-        // _satellite.setVar("pageNamePrevPage", window.s.cookieRead("pageNamePrevPage"));
-        // _satellite.setVar("pageURLPrevPage", window.s.cookieRead("pageURLPrevPage"));
-        // _satellite.setVar('pageIntentPrevPage', window.s.cookieRead("pageIntentPrevPage"));
-        // _satellite.setVar('siteSectionPrevPage', window.s.cookieRead("siteSectionPrevPage"));
-
-        //Establecemos los datos iniciales
-        var cadena = "";
-        var props = dD.page.pageInfo.pageName.split(':');
-        var level = 0;
-        if (dD.page.pageInfo.pageName.indexOf('home') > -1) {
-            s.prop1 = "home";
-        } else {
-            for (var i = 1; i + 1 < props.length; i++) {
-                s["prop" + i] = cadena == "" ? dD.page.pageInfo['level' + i] : cadena + ":" + dD.page.pageInfo['level' + i];
-                cadena = s["prop" + i];
-            }
-        }
         setLinkTrackVars();
         s.t();
         //====================================================================
