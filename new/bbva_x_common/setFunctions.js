@@ -306,7 +306,8 @@ window.updateDigitalDataPrevPage = function(dD) {
         tms_O.AppOnClickStart = false;
         tms_O.AppPageVisit = false;
         _satellite.setVar("digitalDataPrevPage", fnClone(dD));
-        window.dataFunnel.doClear();
+        //Reinicia los datos para los app on click start de argentina
+        _satellite.getVar("siteName") == "BBVA Frances" ? window.dataFunnel.doClear():"";
 
         // console.log("%cdigitalDataPrevPage establecido", "color:red;")
     }
