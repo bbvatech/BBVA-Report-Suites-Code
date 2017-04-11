@@ -27,11 +27,13 @@ _satellite.getVar("setFunctions"),_satellite.getVar("setSerializacion");
 
 /* You may add or alter any code config here. */
 s.debugTracking=false;
+
 //Configuración de cookies
 s.cookieDomainPeriods = "2";
 if (window.location.hostname.indexOf(".com.co") > 0) {
   s.cookieDomainPeriods = "3";
 }
+s.cookieDomain = _satellite.getVar("setCookieDomain");
 
 /* Link Tracking Config */
 s.trackDownloadLinks=false;
@@ -42,7 +44,8 @@ s.trackInlineStats=true;
 //s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx" //optional: add your download file types here if not setting in DTM interface
 //s.linkInternalFilters="javascript:,stg-www.optum.com,www.optum.com" //optional: add your internal domains here if not setting in DTM interface
 s.linkLeaveQueryString=false;
-s.linkTrackVars="eVar25,prop18,prop19,prop20,prop22";s.linkTrackEvents="";
+s.linkTrackVars="eVar25,prop18,prop19,prop20,prop22,";
+s.linkTrackEvents="";
 s.events = "";
 
 //Europe Daylight Savings Dates for timeparting plugin
@@ -66,6 +69,7 @@ s.eventList = "event3,event1,event2"; //Abandon,Success,Error
  s.usePlugins=true;
 function s_doPlugins(s) {
     s.prop22 = s_getLoadTime();
+    //s.eVar24 = s.getDaysSinceLastVisit("s_lv"); //Se elimina por decisión de negocio
     s.eVar25 =  s.getNewRepeat(730, "s_nr");
     s.campaign = s.Util.getQueryParam("cid");
     var ppvArray = s.getPercentPageViewed(_satellite.getVar('pageName'));
@@ -341,25 +345,25 @@ function getTrackingCode() {
  "-sval[0]<30*60*1000&&sval[1]=='New'){s.c_w(cn,ct+'-New',e);return'N" +
  "ew';}else{s.c_w(cn,ct+'-Repeat',e);return'Repeat';}");*/
 s.getNewRepeat = function(d, cn) {
-    var s = this,
-        e = new Date(),
-        cval, sval, ct = e.getTime();
-    d = d ? d : 30;
-    cn = cn ? cn : 's_nr';
-    e.setTime(ct + d * 24 * 60 * 60 * 1000);
-    cval = _satellite.readCookie(cn);
-    if (cval == undefined || cval.length == 0) {
-        _satellite.setCookie(cn, ct + '-New', e);
-        return 'New';
-    }
-    sval = cval.split('-');
-    if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
-        _satellite.setCookie(cn, ct + '-New', e);
-        return 'New';
-    } else {
-        _satellite.setCookie(cn, ct + '-Repeat', e);
-        return 'Repeat';
-    }
+  var s = this,
+      e = new Date(),
+      cval, sval, ct = e.getTime();
+  d = d ? d : 30;
+  cn = cn ? cn : 's_nr';
+  e.setTime(ct + d * 24 * 60 * 60 * 1000);
+  cval = window.s.c_r(cn);
+  if (cval == undefined || cval.length == 0) {
+      window.TMS_CookieWrite(cn, ct + '-New', e);
+      return 'New';
+  }
+  sval = cval.split('-');
+  if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
+      window.TMS_CookieWrite(cn, ct + '-New', e);
+      return 'New';
+  } else {
+      window.TMS_CookieWrite(cn, ct + '-Repeat', e);
+      return 'Repeat';
+  }
 }
 
 /*

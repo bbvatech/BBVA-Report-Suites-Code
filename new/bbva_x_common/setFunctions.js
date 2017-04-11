@@ -244,7 +244,7 @@ window.setLinkTrackVars = function() {
     }
     for (var i = 1; i < 100; i++) {
         if (s["eVar" + i] != undefined && s["eVar" + i] != "") {
-            if (25 == i || 29 == i || 31 == i || 17 == i || 48 == i) {} else {
+            if (17 == i || 25 == i || 29 == i || 31 == i || 37 == i ||  48 == i) {} else {
                 s["eVar" + i] = formatearTexto(s["eVar" + i])
             }
             s.linkTrackVars += ",eVar" + i;

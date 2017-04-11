@@ -32,13 +32,13 @@ _satellite.getVar("setFunctions");
 
 /* You may add or alter any code config here. */
 s.debugTracking=false;
+
 //Configuración de cookies
 s.cookieDomainPeriods = "2";
 if (window.location.hostname.indexOf(".com.mx") > 0) {
-  s.visitor.cookieDomain = "bbvanet.com.mex"
-  s.cookieDomain = "bbvanet.com.mex"
-  s.cookieDomainPeriods = "5";
+  s.cookieDomainPeriods = "3";
 }
+s.cookieDomain = _satellite.getVar("setCookieDomain");
 
 /* Link Tracking Config */
 s.trackDownloadLinks=false;

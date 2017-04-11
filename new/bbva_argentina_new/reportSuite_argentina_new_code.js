@@ -7,9 +7,9 @@ Object.defineProperty(window,'s', {
 s.abort = true; //Impide que se lance una huella en la carga de la libreria
 
 if (_satellite && _satellite.settings.isStaging == true)
-    r_suite = 'bbvaarg.global.2016.dev'; //dev suite
+    r_suite = 'bbvaarg.global.2016.dev'; //dev suite 
 else
-  r_suite='bbvaban.global.2016'; //production suite
+  r_suite='bbvaban.global.2016'; //production suite 
 
 //var s=s_gi(r_suite); //comment out line if setting report suite in DTM interface
 //s.account=r_suite;  //comment out line if setting report suite in DTM interface
@@ -34,6 +34,7 @@ s.cookieDomainPeriods = "2";
 if (window.location.hostname.indexOf(".com.ar") > 0) {
   s.cookieDomainPeriods = "3";
 }
+s.cookieDomain = _satellite.getVar("setCookieDomain");
 
 /* Link Tracking Config */
 s.trackDownloadLinks=false;
@@ -341,26 +342,26 @@ function getTrackingCode() {
  "=0){s.c_w(cn,ct+'-New',e);return'New';}sval=cval.split(cval,'-');if(ct" +
  "-sval[0]<30*60*1000&&sval[1]=='New'){s.c_w(cn,ct+'-New',e);return'N" +
  "ew';}else{s.c_w(cn,ct+'-Repeat',e);return'Repeat';}");*/
-window.s.getNewRepeat = function(d, cn) {
-    var s = this,
-        e = new Date(),
-        cval, sval, ct = e.getTime();
-    d = d ? d : 30;
-    cn = cn ? cn : 's_nr';
-    e.setTime(ct + d * 24 * 60 * 60 * 1000);
-    cval = _satellite.readCookie(cn);
-    if (cval == undefined || cval.length == 0) {
-        _satellite.setCookie(cn, ct + '-New', e);
-        return 'New';
-    }
-    sval = cval.split('-');
-    if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
-        _satellite.setCookie(cn, ct + '-New', e);
-        return 'New';
-    } else {
-        _satellite.setCookie(cn, ct + '-Repeat', e);
-        return 'Repeat';
-    }
+s.getNewRepeat = function(d, cn) {
+  var s = this,
+      e = new Date(),
+      cval, sval, ct = e.getTime();
+  d = d ? d : 30;
+  cn = cn ? cn : 's_nr';
+  e.setTime(ct + d * 24 * 60 * 60 * 1000);
+  cval = window.s.c_r(cn);
+  if (cval == undefined || cval.length == 0) {
+      window.TMS_CookieWrite(cn, ct + '-New', e);
+      return 'New';
+  }
+  sval = cval.split('-');
+  if (ct - sval[0] < 30 * 60 * 1000 && sval[1] == 'New') {
+      window.TMS_CookieWrite(cn, ct + '-New', e);
+      return 'New';
+  } else {
+      window.TMS_CookieWrite(cn, ct + '-Repeat', e);
+      return 'Repeat';
+  }
 }
 
 /*
